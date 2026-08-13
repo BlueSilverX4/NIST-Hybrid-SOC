@@ -1,127 +1,90 @@
-# 🔵 NIST-Hybrid-SOC  
-A unified cybersecurity engineering lab integrating **NIST Framework modules** and the **Hybrid Operations Suite**.  
-This repository contains hands-on SOC pipelines, detection engineering projects, threat hunting exercises, and operational resilience labs built by **BlueSilverX4**.
+## 📂 Project Index
+
+A complete index of all NIST-aligned and Hybrid SOC modules included in this repository.
 
 ---
 
-## 📘 Overview  
-This repo is designed as a **portfolio-grade SOC engineering showcase**, demonstrating real-world defensive operations across:
+### 🔹 NIST Framework — Detect
 
-- **NIST Detect**
-- **NIST Respond**
-- **Hybrid SOC Architecture**
-- **Threat Hunting**
-- **Log Analysis**
-- **Incident Simulation**
-- **Dashboarding & Telemetry**
-- **Automation & Pipeline Engineering**
+- **[Automated Forensic Extraction](ca://s?q=Open_Automated_Forensic_Extraction)**  
+  Zeek logs, packet captures, forensic case study, investigation summary, and triage screenshots.
 
-All modules are built and tested inside a hybrid environment using **Zeek**, **Snort**, **Promtail**, **Loki**, **Grafana**, **Elastic**, and custom BlueBuster tooling.
+- **[Operation PhishShield](ca://s?q=Open_Operation_PhishShield)**  
+  Email ingestion pipeline, Alloy config validation, SIEM ingestion proof, phishing telemetry.
 
----
+- **[Project RAIL-BEAST](ca://s?q=Open_Project_RAIL_BEAST)**  
+  TrainNet chaos simulation, Snort detection, Loki ingestion, Prometheus metrics, honeypot telemetry.
 
-## 🧩 Repository Structure
+- **[Violatile Mirage](ca://s?q=Open_Violatile_Mirage)**  
+  Web shell hunting, auditd triggers, persistence deployment, triage analysis report.
 
-### **NIST_Framework/**
-Contains multiple NIST-aligned detection and response projects:
+- **[Snort3 IDS Automated Detection](ca://s?q=Open_Snort3_IDS)**  
+  Snort3 rules, Lua configs, alert pipelines, dashboard screenshots, and detection documentation.
 
-- **Automated Forensic Extraction**  
-  Full packet analysis, Zeek logs, case study documentation, and forensic triage.
+- **[Log Armor](ca://s?q=Open_Log_Armor)**  
+  Authentication failure exposure, defensive hardening, and SIEM visualization.
 
-- **Operation PhishShield**  
-  Email ingestion pipeline, Alloy config validation, SIEM dashboards, and phishing telemetry.
-
-- **Project RAIL-BEAST**  
-  TrainNet chaos simulation, Snort detection, Loki ingestion, Prometheus metrics, and honeypot telemetry.
-
-- **Violatile Mirage**  
-  Web shell hunting, auditd detection triggers, persistence analysis, and triage reports.
-
-- **Snort3 IDS Automated Detection**  
-  Snort3 rules, Lua configs, alert pipelines, and dashboard screenshots.
-
-- **Log Armor**  
-  Authentication failure exposure and defensive hardening.
-
-…and more.
+- **[Hunting Web Shells](ca://s?q=Open_Hunting_Web_Shells)**  
+  SQLi exploit vector analysis, network traffic triage, kernel-level web shell indicators.
 
 ---
 
-### **Hybrid Operations Suite/**
-A modular SOC environment designed for hybrid host + network telemetry:
+### 🔹 NIST Framework — Respond
 
-- **Hardware Guardian Mini-SOC**  
-  Modular SOC dashboard, Filebeat configs, sanitized logs, and operational resilience documentation.
+- **[Discord Bot SOC Automation](ca://s?q=Open_Discord_Bot_SOC_Automation)**  
+  Automated alerting and SOC workflow orchestration.
 
-- **Operation Ironclad**  
-  Attacker POV evidence, Zeek logs, Promtail configs, time-series spike analysis, and SIEM ingestion proof.
+- **[Sec-Agent](ca://s?q=Open_Sec_Agent)**  
+  Lightweight host telemetry agent for hybrid SOC pipelines.
 
-- **Project PET Defender**  
-  Wazuh deployment, Zeek anomaly detection, DNS spike analysis, and environment setup notes.
-
----
-
-## 🚀 BlueBuster Sync & Release Pipeline  
-This repository is maintained using the **BlueBuster Sync Pipeline**, which:
-
-- Selectively syncs NIST + Hybrid Suite modules  
-- Auto-removes nested git repos  
-- Auto-tags releases (`v1.0.x`)  
-- Auto-generates release notes  
-- Packages artifacts into downloadable `.zip` bundles  
-- Uploads releases directly to GitHub
-
-This ensures every update is clean, versioned, and portfolio-ready.
+- **[SOC-AI Project](ca://s?q=Open_SOC_AI_Project)**  
+  AI-assisted triage and automated detection logic.
 
 ---
 
-## 📊 Dashboards & Telemetry  
-Many modules include:
+### 🔹 Hybrid Operations Suite
 
-- Grafana dashboards  
-- Prometheus metrics  
-- Loki log streams  
-- Snort alerts  
-- Zeek connection logs  
-- DNS anomaly charts  
-- Honeypot telemetry  
-- Operational resilience visualizations
+- **[Hardware Guardian Mini-SOC](ca://s?q=Open_Hardware_Guardian)**  
+  Modular SOC dashboard, Filebeat configs, sanitized logs, operational resilience documentation.
 
-These demonstrate real-world SOC observability and detection engineering.
+- **[Operation Ironclad](ca://s?q=Open_Operation_Ironclad)**  
+  Attacker POV evidence, Zeek logs, Promtail configs, time-series spike analysis, SIEM ingestion proof.
+
+- **[Project PET Defender](ca://s?q=Open_PET_Defender)**  
+  Wazuh deployment, Zeek anomaly detection, DNS spike analysis, environment setup notes.
 
 ---
 
-## 🛠 Technologies Used
+### 🔹 Evidence, Logs & Telemetry
 
-- **Zeek**
-- **Snort3**
-- **Promtail / Loki**
-- **Grafana**
-- **Elastic Stack**
-- **Wazuh**
-- **Prometheus**
-- **Cowrie Honeypot**
-- **Custom BlueBuster scripts**
+- **Zeek Logs** — conn, dns, http, kerberos, ssl, weird, x509  
+- **Snort Alerts** — fast alerts, custom rules, Lua configs  
+- **Prometheus Metrics** — container CPU, cAdvisor, Snort pipeline flush  
+- **Grafana Dashboards** — SIEM ingestion, anomaly detection, metrics visualization  
+- **Honeypot Telemetry** — Cowrie SSH brute force, internal recon, battle lines  
+- **Packet Captures** — forensic PCAPs, DVWA exploit traffic, TrainNet chaos simulation
 
 ---
 
-## 📦 Releases  
-All releases are automatically generated using the BlueBuster Release Builder:
+### 🔹 Documentation & Reports
 
-- Auto-versioned (`v1.0.x`)
-- Includes zipped artifacts
-- Includes commit-based release notes
-
-Download the latest release from the **Releases** tab.
-
----
-
-## 👤 Author  
-**Brandon Gregg (BlueSilverX4)**  
-Cybersecurity Engineer • SOC Pipeline Architect • Detection Engineer  
-Bronx, NY
+- **Operational Resilience Reports**  
+- **Forensic Case Studies**  
+- **Triage Analysis Reports**  
+- **Environment Setup Notes**  
+- **Detection Engineering Documentation**  
+- **Dashboard Exports & Configs**
 
 ---
 
-## 🔵 BlueBuster Motto  
-> *“Defensive engineering is an art — build boldly.”*
+## 🧭 Navigation Tip  
+Every project folder contains:
+
+- A `README.md` or documentation file  
+- Evidence screenshots  
+- Logs or PCAPs  
+- Configurations (Snort, Promtail, Alloy, Filebeat, etc.)  
+- A narrative explaining the detection or response workflow
+
+Use the index above to jump directly to any module.
+
