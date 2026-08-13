@@ -1,0 +1,38 @@
+Hardware-Guardian-Troubleshooting.txt
+Project Name: Hardware Guardian: Modular Mini-SOC
+Author: Brandon Lawrence Gregg
+Hardware: HP Pavilion 23 (Dual-core, 4GB RAM)
+ISSUE 01: Elasticsearch Service Failure (Memory Exhaustion)
+Symptom: Elasticsearch service status showed failed with an "Out of Memory" (OOM) error.
+Root Cause: The default Java Virtual Machine (JVM) heap size exceeded the physical RAM
+available on the HP Pavilion 23, causing the system to crash or "thrash" into swap.
+Resolution: Modified the jvm.options configuration to pin the heap size at 1g (-Xms1g and
+-Xmx1g).
+Outcome: Stabilized the database, allowing Kibana and Filebeat to maintain persistent
+connections.
+ISSUE 02: Filebeat Auditd Crawler Failure
+Symptom: Filebeat status reported active (running) but logs showed: "Crawler error: auditd
+module configured but no filesets enabled."
+Root Cause: The auditd module was initialized in the main config, but the specific filesets for
+system logs were disabled in the modules.d/auditd.yml file.
+Resolution: Executed sudo filebeat modules enable auditd and manually verified the enabled:
+true flag in the module configuration.
+Outcome: Success. Filebeat began harvesting system calls and network socket data
+(SOCKADDR).
+ISSUE 03: Grafana "Context Deadline Exceeded"
+Symptom: Grafana dashboard displayed "No Data" or a red error: context deadline exceeded
+(Client.Timeout exceeded while awaiting headers).
+Root Cause: High system load (load average > 6.0) on the dual-core CPU meant Elasticsearch
+was too slow to respond to queries within the default 30-second window.
+Resolution:
+Increased the Grafana Data Source Timeout to 120s.
+Implemented manual cache clearing: sudo sync; echo 3 | sudo tee /proc/sys/vm/drop_caches.
+Outcome: Grafana successfully retrieved data from the 8.56K event index.
+ISSUE 04: Systemd "Start request repeated too quickly"
+Symptom: Filebeat service refused to start, entering a failed state immediately upon execution.
+Root Cause: Systemd rate-limiting triggered because the service crashed too many times during
+the troubleshooting of the auditd module.
+Resolution: Executed sudo systemctl reset-failed filebeat.service followed by a daemon-reload.
+Outcome: Service restarted successfully and remained in a "Green/Active" state.
+
+

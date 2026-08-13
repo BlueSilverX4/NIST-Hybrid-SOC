@@ -1,0 +1,33 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	files
+#open	2026-05-19-21-44-23
+#fields	ts	fuid	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	source	depth	analyzers	mime_type	filename	duration	local_orig	is_orig	seen_bytes	total_bytes	missing_bytes	overflow_bytes	timedout	parent_fuid	md5	sha1	sha256	extracted	extracted_cutoff	extracted_size
+#types	time	string	string	addr	port	addr	port	string	count	set[string]	string	string	interval	bool	bool	count	count	count	count	bool	string	string	string	string	string	bool	count
+1779241429.950959	FmtDlK1juLVpZvBdXf	CDbLDc3cMaBaoPYOll	192.168.1.61	47846	192.168.1.157	3000	HTTP	0	(empty)	text/plain	-	0.000000	T	F	15	-	0	0	F	-	-	-	-	-	-	-
+1779241432.795200	FJV1972efFbtycTqxg	Cf3ieN3eA0Ll9R6Mc3	192.168.1.61	52590	192.168.1.157	3000	HTTP	0	(empty)	text/plain	-	0.000000	T	F	29	29	0	0	F	-	-	-	-	-	-	-
+1779241442.457460	FYDpL31zgvL4f7P5Oa	CxrWZt1pzp35G4LkYf	192.168.1.61	55170	192.168.1.157	5601	HTTP	0	(empty)	text/json	-	0.000000	T	F	60	60	0	0	F	-	-	-	-	-	-	-
+1779241477.435532	FFPutC2h7po92o9vP6	C9YJMV21Bzx6HT5Mva	192.168.1.61	48580	192.168.1.157	9200	HTTP	0	(empty)	text/json	-	0.000000	T	F	541	541	0	0	F	-	-	-	-	-	-	-
+1779241482.824908	Fcpwj24WBD73RiMimd	CkgSF64VviXLnm3bH4	192.168.1.61	57214	192.168.1.157	9200	HTTP	0	(empty)	text/plain	-	0.000000	T	F	316	-	0	0	F	-	-	-	-	-	-	-
+1779241496.205172	F2WJUi1pMFnWHgryj6	C9SvsO2A4qMuc2yGEe	192.168.1.61	53122	192.168.1.157	9200	HTTP	0	(empty)	text/json	-	0.000000	T	F	203	203	0	0	F	-	-	-	-	-	-	-
+1779241499.983599	FP4O0i2JvhRxeVvYdc	CvaBL832LQ9LmGnII9	192.168.1.61	36330	192.168.1.157	9200	HTTP	0	(empty)	text/json	-	0.000000	T	F	343	343	0	0	F	-	-	-	-	-	-	-
+1779241501.286790	FGX0PK3BcFGkp4AEQe	CGkPYf35lVqZSomXph	192.168.1.61	53056	192.168.1.157	9200	HTTP	0	(empty)	text/json	-	0.000000	T	F	343	343	0	0	F	-	-	-	-	-	-	-
+1779241501.366714	Fpucoq1dmZlXSb8dE8	CFsOOb2hsV5CYUWFPb	192.168.1.61	36338	192.168.1.157	9200	HTTP	0	(empty)	text/json	-	0.000000	T	F	203	203	0	0	F	-	-	-	-	-	-	-
+1779241501.453935	FJx9Bc3mmH6npyRMYj	CEd6vQ1T3z1edREUH5	192.168.1.61	53052	192.168.1.157	9200	HTTP	0	(empty)	text/json	-	0.000000	T	F	343	343	0	0	F	-	-	-	-	-	-	-
+1779241505.093075	Fw4n8W2LJB396nfLV6	CBmBHn2pe7uorSvfE3	192.168.1.61	55658	192.168.1.157	9200	HTTP	0	(empty)	text/json	-	0.000000	T	F	127	127	0	0	F	-	-	-	-	-	-	-
+1779241506.519547	FmDAnw1QXhOcnFbi42	ClOHXA3JMCzp8YbxUd	192.168.1.61	55670	192.168.1.157	9200	HTTP	0	(empty)	text/json	-	0.000000	T	F	343	343	0	0	F	-	-	-	-	-	-	-
+1779241507.418138	FVQFH64lp3a0OOCLBd	CdIQIh3Ee5vE1o5brk	192.168.1.61	55686	192.168.1.157	9200	HTTP	0	(empty)	text/json	-	0.000000	T	F	343	343	0	0	F	-	-	-	-	-	-	-
+1779241552.568816	Fm8Xm52rHUO7pgf5ej	CeEJhO3q4VSGo2SxWj	192.168.1.61	48740	192.168.1.157	9200	HTTP	0	(empty)	text/plain	-	0.000000	T	F	314	-	0	0	F	-	-	-	-	-	-	-
+1779241571.997060	F1uNAO2NbmkQBI2aaj	Cf7X7zU7RVKx84jXd	192.168.1.61	57334	192.168.1.157	5601	HTTP	0	(empty)	application/soap+xml	-	0.000000	T	T	441	441	0	0	F	-	-	-	-	-	-	-
+1779241572.054126	FWFlXa293Ssd4uHpC1	CuddK73aA7KJoxqoWi	192.168.1.61	49290	192.168.1.157	3000	HTTP	0	(empty)	text/plain	-	0.000000	T	F	29	29	0	0	F	-	-	-	-	-	-	-
+1779241574.076031	FZzaCPZQS1ony4Xr5	C9PYiT1w7mXfA5eGN7	192.168.1.61	49298	192.168.1.157	3000	HTTP	0	(empty)	text/plain	-	0.000000	T	F	68	68	0	0	F	-	-	-	-	-	-	-
+1779241574.275527	FxVVWO2lwuM7c4kxz8	CRwwE7139mIB8QvFBl	192.168.1.61	49312	192.168.1.157	3000	HTTP	0	(empty)	text/plain	-	0.000000	T	F	49	49	0	0	F	-	-	-	-	-	-	-
+1779241574.321184	FXmIRV1HKxKSbOO5Xk	CSMryg3mAQ7wyNCXo9	192.168.1.61	49328	192.168.1.157	3000	HTTP	0	(empty)	text/plain	-	0.000000	T	F	56	56	0	0	F	-	-	-	-	-	-	-
+1779241582.344989	FvjJpH1OeMSYzciTY8	CKFGuIxJx2YlSWhtc	192.168.1.61	49334	192.168.1.157	3000	HTTP	0	(empty)	text/html	-	4.628336	T	F	59240	-	0	0	F	-	-	-	-	-	-	-
+1779241582.344727	FuMwsA4L17RL0XapHa	Cv68zd30oPDX2YwK2k	192.168.1.61	49332	192.168.1.157	3000	HTTP	0	(empty)	text/html	-	4.939865	T	F	59240	-	0	0	F	-	-	-	-	-	-	-
+1779241592.961077	F6kSAM341Th4N1sXU2	CQnOJ62eb6BJpYK4S7	192.168.1.61	39152	192.168.1.157	5601	HTTP	0	(empty)	text/json	-	0.000000	T	F	60	60	0	0	F	-	-	-	-	-	-	-
+1779241593.095209	FS93GO1WladMDT3YQ2	CulcnS27grP5N0maDa	192.168.1.61	54704	192.168.1.157	3000	HTTP	0	(empty)	text/plain	-	0.000000	T	F	29	29	0	0	F	-	-	-	-	-	-	-
+1779241593.169663	FTUn6Yz2nl2SFVynj	CBiS1S17zoRKswIBed	192.168.1.61	54708	192.168.1.157	3000	HTTP	0	(empty)	text/plain	-	0.000000	T	F	29	29	0	0	F	-	-	-	-	-	-	-
+#close	2026-05-19-21-51-22

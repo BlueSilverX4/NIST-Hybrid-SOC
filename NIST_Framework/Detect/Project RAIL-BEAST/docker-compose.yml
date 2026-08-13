@@ -1,0 +1,92 @@
+services:
+  loki-host:
+    image: grafana/loki:2.9.0
+    container_name: loki-host
+    ports:
+      - "3100:3100"
+      - "9096:9096"
+    volumes:
+      - ./loki-host-config.yaml:/etc/loki/local-config.yaml
+      - ./loki-host-data:/loki
+    command: "-config.file=/etc/loki/local-config.yaml -ingester.wal-dir=/loki/wal"
+
+  loki-trainnet:
+    image: grafana/loki:2.9.0
+    container_name: loki-trainnet
+    ports:
+      - "3101:3100"
+      - "9097:9096"
+    volumes:
+      - ./loki-trainnet-config.yaml:/etc/loki/local-config.yaml
+      - ./loki-trainnet-data:/loki
+    command: "-config.file=/etc/loki/local-config.yaml -ingester.wal-dir=/loki/wal"
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3005:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:v0.47.0
+    container_name: cadvisor
+    ports:
+      - "8080:8080"
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+      - /dev/disk/:/dev/disk:ro
+    privileged: true
+    devices:
+      - /dev/kmsg
+
+  alloy-host:
+    image: grafana/alloy:latest
+    container_name: alloy-host
+    ports:
+      - "12347:12345"
+    volumes:
+      - ./alloy-host-config.alloy:/etc/alloy/config.alloy
+      - ./snort_logs:/snort_logs:ro
+      - /var/log:/var/log:ro
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    command: run --storage.path=/var/lib/alloy/data --server.http.listen-addr=0.0.0.0:12345 /etc/alloy/config.alloy
+
+  alloy-trainnet:
+    image: grafana/alloy:latest
+    container_name: alloy-trainnet
+    ports:
+      - "12346:12345"
+    volumes:
+      - ./alloy-trainnet-config.alloy:/etc/alloy/config.alloy
+      - ./snort_logs:/snort_logs:ro
+      - /var/log:/var/log:ro
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    command: run --storage.path=/var/lib/alloy/data /etc/alloy/config.alloy
+
+  snort3:
+    image: ciscotalos/snort3
+    container_name: snort_fix
+    restart: unless-stopped
+    network_mode: "host"
+    tty: true
+    volumes:
+      - /var/log/snort:/var/log/snort
+      - ./snort_logs:/snort_logs
+    command: ["snort", "-i", "eth0", "-c", "/usr/local/etc/snort/snort.lua", "-A", "fast"]

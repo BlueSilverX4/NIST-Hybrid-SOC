@@ -1,0 +1,12 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	notice
+#open	2026-05-18-12-21-09
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	fuid	file_mime_type	file_desc	proto	note	msg	sub	src	dst	p	n	peer_descr	actions	email_dest	suppress_for	remote_location.country_code	remote_location.region	remote_location.city	remote_location.latitude	remote_location.longitude
+#types	time	string	addr	port	addr	port	string	string	string	enum	enum	string	string	addr	addr	port	count	string	set[enum]	set[string]	interval	string	string	string	double	double
+1779121199.295302	-	-	-	-	-	-	-	-	-	PacketFilter::Dropped_Packets	815 packets dropped after filtering, 2021 received, 2008 on link	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1779141301.331738	-	-	-	-	-	-	-	-	-	PacketFilter::Dropped_Packets	313 packets dropped after filtering, 4479 received, 4479 on link	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1779165303.403866	-	-	-	-	-	-	-	-	-	PacketFilter::Dropped_Packets	36282 packets dropped after filtering, 68274 received, 68274 on link	-	-	-	-	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+#close	2026-05-19-09-36-21

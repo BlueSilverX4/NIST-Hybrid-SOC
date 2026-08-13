@@ -1,0 +1,14 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	quic
+#open	2026-05-19-21-21-52
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	version	client_initial_dcid	client_scid	server_scid	server_name	client_protocol	history
+#types	time	string	addr	port	addr	port	string	string	string	string	string	string	string
+1779240051.878969	CPrEzZ1RQ5IVtjAAs5	2600:480a:4a35:1300::5633	33953	2607:f8b0:4004:c1f::54	443	1	fd9fa583d3ae15e0	(empty)	fd9fa583d3ae15e0	accounts.google.com	h3	IIISZiiIiiishIHHi
+1779240653.663579	Cl0uZFqsCE7wwvIQ1	2600:480a:4a35:1300::5633	49767	2607:f8b0:4004:c1b::54	443	1	a66230f70605612d	(empty)	e66230f70605612d	accounts.google.com	h3	IISiiishIIihZHHHH
+1779240774.409530	CTN7DG47ga0EsKO0Ra	2600:480a:4a35:1300::5633	53767	2600:9000:2026:f600:12:bd7a:5b00:93a1	443	1	e03353a771588f03	(empty)	3619050448852ff35f19a973edbd1dfcc9c65842	safebrowsing.brave.com	h3	IISIIiiishhIhhIHHHiHHHh
+1779241255.820240	CI2snB4whvHd0eHgLh	2600:480a:4a35:1300::5633	52024	2607:f8b0:4004:c1b::54	443	1	5d3abb7ed8ab9919	(empty)	fd3abb7ed8ab9919	accounts.google.com	h3	IIISZiiiIiishIHHiH
+1779241876.297814	C6DK673nMbqXrhzJxg	2600:480a:4a35:1300::5633	40953	2607:f8b0:4004:c19::54	443	1	e14236052127ee7f	(empty)	e14236052127ee7f	accounts.google.com	h3	IIISZiiiiishIH
+#close	2026-05-19-21-51-23

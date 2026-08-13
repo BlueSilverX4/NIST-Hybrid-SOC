@@ -1,0 +1,4 @@
+positions:
+  ? path: /var/log/syslog
+    labels: '{job="netpolice-undernet-hunter"}'
+  : "1075083368"

@@ -1,0 +1,14 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	x509
+#open	2026-05-18-20-00-26
+#fields	ts	fingerprint	certificate.version	certificate.serial	certificate.subject	certificate.issuer	certificate.not_valid_before	certificate.not_valid_after	certificate.key_alg	certificate.sig_alg	certificate.key_type	certificate.key_length	certificate.exponent	certificate.curve	san.dns	san.uri	san.email	san.ip	basic_constraints.ca	basic_constraints.path_len	host_cert	client_cert
+#types	time	string	count	string	string	string	time	time	string	string	string	count	string	string	vector[string]	vector[string]	vector[string]	vector[addr]	bool	count	bool	bool
+1779148813.403872	bbf41884fb0bdcfee560a064f9397077546151112bfd1795e368a7f632b929e0	3	035159632CB3153E8A31243C30BC864C	CN=bsg.brave.com	CN=Amazon RSA 2048 M02,O=Amazon,C=US	1754006400.000000	1788047999.000000	rsaEncryption	sha256WithRSAEncryption	rsa	2048	65537	-	bsg.brave.com,*.bsg.brave.com	-	-	-	F	-	T	F
+1779148813.403872	b0f330a31a0c50987e1c3a7bb02c2dda682991d3165b517bd44fba4a6020bd94	3	0773124A4BCBD44EC7B53BEAF194842D3A0FA1	CN=Amazon RSA 2048 M02,O=Amazon,C=US	CN=Amazon Root CA 1,O=Amazon,C=US	1661293530.000000	1913754330.000000	rsaEncryption	sha256WithRSAEncryption	rsa	2048	65537	-	-	-	-	-	T	0	F	F
+1779148813.403872	87dcd4dc74640a322cd205552506d1be64f12596258096544986b4850bc72706	3	067F944A2A27CDF3FAC2AE2B01F908EEB9C4C6	CN=Amazon Root CA 1,O=Amazon,C=US	CN=Starfield Services Root Certificate Authority - G2,O=Starfield Technologies\\, Inc.,L=Scottsdale,ST=Arizona,C=US	1432555200.000000	2145834000.000000	rsaEncryption	sha256WithRSAEncryption	rsa	2048	65537	-	-	-	-	-	T	-	F	F
+1779165148.700965	f50f5bd145afb388798835a88c2b51431688eb6fb3dca8f949f574084d9ea54c	3	06B17F66C59DA1AE5B7042654D4914D20751	CN=rpm.grafana.com	CN=R13,O=Let's Encrypt,C=US	1774755789.000000	1782531788.000000	rsaEncryption	sha256WithRSAEncryption	rsa	2048	65537	-	apt.grafana.com,packages.grafana.com,rpm-beta.grafana.com,rpm.grafana.com	-	-	-	F	-	T	F
+1779165148.700965	d3b128216a843f8ef1321501f5df52a5df52939ee2c19297712cd3de4d419354	3	5A00F212D8D4B480F3924157EA298305	CN=R13,O=Let's Encrypt,C=US	CN=ISRG Root X1,O=Internet Security Research Group,C=US	1710288000.000000	1804895999.000000	rsaEncryption	sha256WithRSAEncryption	rsa	2048	65537	-	-	-	-	-	T	0	F	F
+#close	2026-05-19-09-36-21

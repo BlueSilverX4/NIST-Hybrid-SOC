@@ -1,0 +1,25 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+
+  # Prometheus self‑monitoring
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["prometheus:9090"]
+
+  # cAdvisor (container metrics)
+  - job_name: "cadvisor"
+    static_configs:
+      - targets: ["cadvisor:8080"]
+
+  # Alloy Host (Snort + system logs metrics)
+  - job_name: "alloy_host"
+    static_configs:
+      - targets: ["alloy-host:12345"]
+
+  # Alloy Train-Net (DVWA, Cowrie, Nginx metrics)
+  - job_name: "alloy_trainnet"
+    static_configs:
+      - targets: ["alloy-trainnet:12345"]

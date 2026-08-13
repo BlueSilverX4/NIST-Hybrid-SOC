@@ -1,0 +1,36 @@
+local.file_match "wireless_logs" {
+    path_targets = [{
+        __address__ = "localhost",
+        __path__    = "/home/brandongregg/Portfolios/Project-Transcode-WaveMonitor/data_exports/wave_capture-01.csv",
+        job         = "wave-world-monitor",
+    }]
+}
+
+loki.source.file "wave_sensor_stream" {
+    targets    = local.file_match.wireless_logs.targets
+    forward_to = [loki.process.parse_wireless_csv.receiver]
+}
+
+loki.process "parse_wireless_csv" {
+    // Regex stage to extract BSSID, Channel, and Privacy status from airodump lines
+    stage.regex {
+        expression = "^(?P<bssid>[0-9A-Fa-f]{2}(:[0-9A-Fa-f]{2}){5}),\\s*[^,\\s]*,\\s*[^,\\s]*,\\s*(?P<channel>\\d+),\\s*[^,\\s]*,\\s*(?P<privacy>[A-Za-z0-9]+)"
+    }
+
+    // Convert parsed matches into searchable Loki labels
+    stage.labels {
+        values = {
+            bssid   = "bssid",
+            channel = "channel",
+            privacy = "privacy",
+        }
+    }
+
+    forward_to = [loki.write.local_loki_sink.receiver]
+}
+
+loki.write "local_loki_sink" {
+    endpoint {
+        url = "http://127.0.0.1:3100/loki/api/v1/push"
+    }
+}

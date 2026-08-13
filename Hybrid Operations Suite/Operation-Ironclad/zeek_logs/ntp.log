@@ -1,0 +1,11 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	ntp
+#open	2026-05-19-21-19-01
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	version	mode	stratum	poll	precision	root_delay	root_disp	ref_id	ref_time	org_time	rec_time	xmt_time	num_exts
+#types	time	string	addr	port	addr	port	count	count	count	interval	interval	interval	interval	string	time	time	time	time	count
+1779239941.887988	CLAlHb416zRCJo2qv	2600:480a:4a35:1300::5633	50030	2600:3c00::f03c:91ff:fedf:5654	123	4	3	0	1.000000	1.000000	0.000000	0.000000	\x00\x00\x00\x00	0.000000	0.000000	0.000000	1732899592.725294	0
+1779239941.935368	CLAlHb416zRCJo2qv	2600:480a:4a35:1300::5633	50030	2600:3c00::f03c:91ff:fedf:5654	123	4	4	2	1.000000	0.000000	0.000809	0.001450	33.219.230.8	1779238642.347342	1732899592.725294	1779239941.924416	1779239941.924452	0
+#close	2026-05-19-21-51-22

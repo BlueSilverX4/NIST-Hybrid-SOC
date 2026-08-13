@@ -1,0 +1,70 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	ldap_search
+#open	2026-05-11-06-59-54
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	message_id	scope	deref_aliases	base_object	result_count	result	diagnostic_message	filter	attributes
+#types	time	string	addr	port	addr	port	int	string	string	string	count	string	string	string	vector[string]
+1772308508.957109	CJXILicJ3AlymLqUg	10.2.28.88	58447	10.2.28.2	389	97	base	never	-	1	success	-	(&(&(&(&(DnsDomain=easyas123.tech.)(Host=DESKTOP-TEYQ2NR))(DomainGuid=006f1537-9919-489e-bd46-e0962fb9af66))(NtVer=0x20000016))(DnsHostName=DESKTOP-TEYQ2NR.easyas123.tech))	-
+1772308508.957110	CJXILicJ3AlymLqUg	10.2.28.88	58447	10.2.28.2	389	96	base	never	-	1	success	-	(&(&(&(&(DnsDomain=easyas123.tech.)(Host=DESKTOP-TEYQ2NR))(DomainGuid=006f1537-9919-489e-bd46-e0962fb9af66))(NtVer=0x20000016))(DnsHostName=DESKTOP-TEYQ2NR.easyas123.tech))	-
+1772308509.008707	CJXILicJ3AlymLqUg	10.2.28.88	58447	10.2.28.2	389	98	base	never	-	1	success	-	(&(&(&(&(DnsDomain=easyas123.tech.)(Host=DESKTOP-TEYQ2NR))(DomainGuid=006f1537-9919-489e-bd46-e0962fb9af66))(NtVer=0x20000016))(DnsHostName=DESKTOP-TEYQ2NR.easyas123.tech))	-
+1772308509.008709	CJXILicJ3AlymLqUg	10.2.28.88	58447	10.2.28.2	389	99	base	never	-	1	success	-	(&(&(&(&(DnsDomain=easyas123.tech.)(Host=DESKTOP-TEYQ2NR))(DomainGuid=006f1537-9919-489e-bd46-e0962fb9af66))(NtVer=0x20000016))(DnsHostName=DESKTOP-TEYQ2NR.easyas123.tech))	-
+1772308513.970115	CJXILicJ3AlymLqUg	10.2.28.88	58447	10.2.28.2	389	100	base	never	-	1	success	-	(&(&(&(&(DnsDomain=easyas123.tech.)(Host=DESKTOP-TEYQ2NR))(DomainGuid=006f1537-9919-489e-bd46-e0962fb9af66))(NtVer=0x20000016))(DnsHostName=DESKTOP-TEYQ2NR.easyas123.tech))	-
+1772308514.132467	CJXILicJ3AlymLqUg	10.2.28.88	58447	10.2.28.2	389	101	base	never	-	1	success	-	(&(&(&(&(&(DnsDomain=easyas123.tech.)(Host=DESKTOP-TEYQ2NR))(DomainSid=S-1-5-21-408266568-3947399335-3725113099))(DomainGuid=006f1537-9919-489e-bd46-e0962fb9af66))(NtVer=0x20000016))(DnsHostName=DESKTOP-TEYQ2NR.easyas123.tech))	-
+1772308514.234515	CLbpXD4rsIyoVGndOk	10.2.28.88	62054	10.2.28.2	389	102	base	never	-	1	success	-	(&(&(&(&(DnsDomain=easyas123.tech.)(Host=DESKTOP-TEYQ2NR))(DomainGuid=006f1537-9919-489e-bd46-e0962fb9af66))(NtVer=0x20000016))(DnsHostName=DESKTOP-TEYQ2NR.easyas123.tech))	-
+1772308514.337455	Cgx4cM3ju0Xlvblw0j	10.2.28.88	62055	10.2.28.2	389	103	base	never	-	1	success	-	(&(&(&(&(DnsDomain=easyas123.tech.)(Host=DESKTOP-TEYQ2NR))(DomainGuid=006f1537-9919-489e-bd46-e0962fb9af66))(NtVer=0x20000016))(DnsHostName=DESKTOP-TEYQ2NR.easyas123.tech))	-
+1772308522.947512	CPXsKKVucXnLk8Cyi	10.2.28.88	54770	10.2.28.2	389	104	base	never	-	1	success	-	(&(&(&(&(DnsDomain=easyas123.tech.)(Host=DESKTOP-TEYQ2NR))(DomainGuid=006f1537-9919-489e-bd46-e0962fb9af66))(NtVer=0x20000016))(DnsHostName=DESKTOP-TEYQ2NR.easyas123.tech))	-
+1772308522.955309	CPXsKKVucXnLk8Cyi	10.2.28.88	54770	10.2.28.2	389	105	base	never	-	1	success	-	(&(&(&(&(DnsDomain=easyas123.tech.)(Host=DESKTOP-TEYQ2NR))(DomainGuid=006f1537-9919-489e-bd46-e0962fb9af66))(NtVer=0x20000016))(DnsHostName=DESKTOP-TEYQ2NR.easyas123.tech))	-
+1772308523.103241	ChitRz3RPSvKC9NlI5	10.2.28.88	54771	10.2.28.2	389	107	base	never	-	1	success	-	(&(&(&(&(DnsDomain=easyas123.tech.)(Host=DESKTOP-TEYQ2NR))(DomainGuid=006f1537-9919-489e-bd46-e0962fb9af66))(NtVer=0x20000016))(DnsHostName=DESKTOP-TEYQ2NR.easyas123.tech))	-
+1772308523.103239	ChitRz3RPSvKC9NlI5	10.2.28.88	54771	10.2.28.2	389	106	base	never	-	1	success	-	(&(&(&(&(DnsDomain=EASYAS123.TECH)(Host=DESKTOP-TEYQ2NR))(DomainGuid=006f1537-9919-489e-bd46-e0962fb9af66))(NtVer=0x00000016))(DnsHostName=DESKTOP-TEYQ2NR.easyas123.tech))	-
+1772308558.556540	C8XTub4wUiEPCZeIy4	10.2.28.88	51913	10.2.28.2	389	1	base	never	-	1	success	-	(objectclass=*)	-
+1772308583.868793	CkTPVN2lzInzUZAZpf	10.2.28.88	58914	10.2.28.2	389	108	base	never	-	1	success	-	(&(&(&(&(DnsDomain=easyas123.tech.)(Host=DESKTOP-TEYQ2NR))(DomainGuid=006f1537-9919-489e-bd46-e0962fb9af66))(NtVer=0x00000016))(DnsHostName=DESKTOP-TEYQ2NR.easyas123.tech))	-
+1772308584.005041	COKBhD4o3utP2zMxl3	10.2.28.88	53280	10.2.28.2	389	1	base	never	-	1	success	-	(objectclass=*)	-
+1772308584.051793	CEfD7D2iDBsUJZZSr6	10.2.28.88	53284	10.2.28.2	389	1	base	never	-	1	success	-	(objectclass=*)	-
+1772308824.563356	CQEln93ypA874X61rd	10.2.28.88	59343	10.2.28.2	389	1	base	never	-	1	success	-	(objectclass=*)	-
+1772309424.723078	CYn9qH27iTI2LUT0oe	10.2.28.88	59357	10.2.28.2	389	1	base	never	-	1	success	-	(objectclass=*)	-
+1772309755.105750	CVhwhC4JYQSRkDvGQl	10.2.28.88	59368	10.2.28.2	389	1	base	never	-	1	success	-	(objectclass=*)	-
+1772309910.456963	ChDSPv2Seg5ouw6aj4	10.2.28.88	54530	10.2.28.2	389	1	base	never	-	1	success	-	(objectclass=*)	-
+1772310205.288669	CuVZDr3tKuAyUrT8W8	10.2.28.88	54541	10.2.28.2	389	1	base	never	-	1	success	-	(objectclass=*)	-
+1772310758.927360	CYnkay35cUa0jFtAO7	10.2.28.88	63084	10.2.28.2	389	109	base	never	-	1	success	-	(&(&(&(&(DnsDomain=easyas123.tech.)(Host=DESKTOP-TEYQ2NR))(DomainGuid=006f1537-9919-489e-bd46-e0962fb9af66))(NtVer=0x00000016))(DnsHostName=DESKTOP-TEYQ2NR.easyas123.tech))	-
+1772310759.047402	C7uWZJZrXRUQm99ub	10.2.28.88	63086	10.2.28.2	389	110	base	never	-	1	success	-	(&(&(&(&(DnsDomain=easyas123.tech.)(Host=DESKTOP-TEYQ2NR))(DomainGuid=006f1537-9919-489e-bd46-e0962fb9af66))(NtVer=0x20000016))(DnsHostName=DESKTOP-TEYQ2NR.easyas123.tech))	-
+1772310759.156050	C1K5Cb3zGIirPNmiul	10.2.28.88	54549	10.2.28.2	389	1	base	never	-	1	success	-	(objectclass=*)	-
+1772310816.778258	CFpK5542gfsciG2Lpl	10.2.28.88	54557	10.2.28.2	389	1	base	never	-	1	success	-	(objectclass=*)	-
+1772311038.761708	CbaBIl2ZGi2qOXx8La	10.2.28.88	54562	10.2.28.2	389	1	base	never	-	1	success	-	(objectclass=*)	-
+1772311607.069989	Ch5IcA2ozU8bWnFtM	10.2.28.88	54572	10.2.28.2	389	1	base	never	-	1	success	-	(objectclass=*)	-
+1772312533.487408	CxeVK51DsSskU5Ddn3	10.2.28.88	63963	10.2.28.2	389	1	base	never	-	1	success	-	(objectclass=*)	-
+1772313477.886358	Caxm8FWdf9BlsS8mi	10.2.28.88	50317	10.2.28.2	389	111	base	never	-	1	success	-	(&(&(&(&(DnsDomain=easyas123.tech.)(Host=DESKTOP-TEYQ2NR))(DomainGuid=006f1537-9919-489e-bd46-e0962fb9af66))(NtVer=0x20000016))(DnsHostName=DESKTOP-TEYQ2NR.easyas123.tech))	-
+1772313481.937158	ChNkqw29kxQqZGydk3	10.2.28.88	51229	10.2.28.2	389	112	base	never	-	1	success	-	(&(&(&(&(&(DnsDomain=easyas123.tech.)(Host=DESKTOP-TEYQ2NR))(DomainSid=S-1-5-21-408266568-3947399335-3725113099))(DomainGuid=006f1537-9919-489e-bd46-e0962fb9af66))(NtVer=0x00000016))(DnsHostName=DESKTOP-TEYQ2NR.easyas123.tech))	-
+1772313923.472906	C8Mmyo4qDCsx2JKjxf	10.2.28.88	54900	10.2.28.2	389	1	base	never	-	1	success	-	(objectclass=*)	-
+1772313923.481131	CmzZ2T1MCkk1qj3kyc	10.2.28.88	54252	10.2.28.2	389	113	base	never	-	1	success	-	(&(&(&(&(&(DnsDomain=easyas123.tech.)(Host=DESKTOP-TEYQ2NR))(DomainSid=S-1-5-21-408266568-3947399335-3725113099))(DomainGuid=006f1537-9919-489e-bd46-e0962fb9af66))(NtVer=0x20000016))(DnsHostName=DESKTOP-TEYQ2NR.easyas123.tech))	-
+1772313923.591190	C3c1kX2buRm21vMUhb	10.2.28.88	54253	10.2.28.2	389	114	base	never	-	1	success	-	(&(&(&(&(DnsDomain=easyas123.tech)(Host=DESKTOP-TEYQ2NR))(DomainGuid=006f1537-9919-489e-bd46-e0962fb9af66))(NtVer=0x20000016))(DnsHostName=DESKTOP-TEYQ2NR.easyas123.tech))	-
+1772314260.560227	CatecP1dYAMf6c1rSg	10.2.28.88	54905	10.2.28.2	389	1	base	never	-	1	success	-	(objectclass=*)	-
+1772314260.570652	CvaNKC1gDos84OnJ3j	10.2.28.88	54255	10.2.28.2	389	115	base	never	-	1	success	-	(&(&(&(&(&(DnsDomain=easyas123.tech.)(Host=DESKTOP-TEYQ2NR))(DomainSid=S-1-5-21-408266568-3947399335-3725113099))(DomainGuid=006f1537-9919-489e-bd46-e0962fb9af66))(NtVer=0x20000016))(DnsHostName=DESKTOP-TEYQ2NR.easyas123.tech))	-
+1772314358.951174	CYsaefDvI71EvzPej	10.2.28.88	54256	10.2.28.2	389	116	base	never	-	1	success	-	(&(&(&(&(DnsDomain=easyas123.tech.)(Host=DESKTOP-TEYQ2NR))(DomainGuid=006f1537-9919-489e-bd46-e0962fb9af66))(NtVer=0x00000016))(DnsHostName=DESKTOP-TEYQ2NR.easyas123.tech))	-
+1772314359.073166	CHjDo83nA8kAwq7jnk	10.2.28.88	54910	10.2.28.2	389	1	base	never	-	1	success	-	(objectclass=*)	-
+1772314834.269007	Cv5LtgWVC8j7bXqMe	10.2.28.88	54915	10.2.28.2	389	1	base	never	-	1	success	-	(objectclass=*)	-
+1772315207.039127	C8qnsD2q2xnv5n1eE5	10.2.28.88	54921	10.2.28.2	389	1	base	never	-	1	success	-	(objectclass=*)	-
+1772315727.420780	C80geq3QttVaz7ywc4	10.2.28.88	55361	10.2.28.2	389	117	base	never	-	1	success	-	(&(&(&(&(DnsDomain=easyas123.tech.)(Host=DESKTOP-TEYQ2NR))(DomainGuid=006f1537-9919-489e-bd46-e0962fb9af66))(NtVer=0x20000016))(DnsHostName=DESKTOP-TEYQ2NR.easyas123.tech))	-
+1772315727.529896	C3SuAb3JC4eOyKlcle	10.2.28.88	54935	10.2.28.2	389	1	base	never	-	1	success	-	(objectclass=*)	-
+1772317092.091318	CRIB6bmrPok5rozh8	10.2.28.88	63831	10.2.28.2	389	118	base	never	-	1	success	-	(&(&(&(&(DnsDomain=easyas123.tech)(Host=DESKTOP-TEYQ2NR))(DomainGuid=006f1537-9919-489e-bd46-e0962fb9af66))(NtVer=0x20000016))(DnsHostName=DESKTOP-TEYQ2NR.easyas123.tech))	-
+1772317092.206603	CHrwG5239CuregDD39	10.2.28.88	63832	10.2.28.2	389	119	base	never	-	1	success	-	(&(&(&(&(&(DnsDomain=easyas123.tech.)(Host=DESKTOP-TEYQ2NR))(DomainSid=S-1-5-21-408266568-3947399335-3725113099))(DomainGuid=006f1537-9919-489e-bd46-e0962fb9af66))(NtVer=0x00000016))(DnsHostName=DESKTOP-TEYQ2NR.easyas123.tech))	-
+1772317428.008808	C3RVdQ2B4nzKs8Moa1	10.2.28.88	57237	10.2.28.2	389	1	base	never	-	1	success	-	(objectclass=*)	-
+1772317958.970354	CMXi8zrLIhoa3aWLj	10.2.28.88	57489	10.2.28.2	389	120	base	never	-	1	success	-	(&(&(&(&(DnsDomain=easyas123.tech.)(Host=DESKTOP-TEYQ2NR))(DomainGuid=006f1537-9919-489e-bd46-e0962fb9af66))(NtVer=0x00000016))(DnsHostName=DESKTOP-TEYQ2NR.easyas123.tech))	-
+1772317959.090427	Cwjj1a3QyJcFgRpOt4	10.2.28.88	57491	10.2.28.2	389	121	base	never	-	1	success	-	(&(&(&(&(DnsDomain=easyas123.tech.)(Host=DESKTOP-TEYQ2NR))(DomainGuid=006f1537-9919-489e-bd46-e0962fb9af66))(NtVer=0x20000016))(DnsHostName=DESKTOP-TEYQ2NR.easyas123.tech))	-
+1772317959.197300	CFcjulgNtA9Yk4rG8	10.2.28.88	57245	10.2.28.2	389	1	base	never	-	1	success	-	(objectclass=*)	-
+1772318468.721389	CgOrSm1yNdQI5QzdB	10.2.28.88	57253	10.2.28.2	389	1	base	never	-	1	success	-	(objectclass=*)	-
+1772318638.436189	CWGKCR2BXOXb6IGYEl	10.2.28.88	57259	10.2.28.2	389	1	base	never	-	1	success	-	(objectclass=*)	-
+1772318806.982653	CltX6p2XqfOIWajEC4	10.2.28.88	57265	10.2.28.2	389	1	base	never	-	1	success	-	(objectclass=*)	-
+1772319324.861197	CrrEgS1Iqilp1gSXE2	10.2.28.88	57275	10.2.28.2	389	1	base	never	-	1	success	-	(objectclass=*)	-
+1772319324.868983	C3rTh816RuBH4Tffdj	10.2.28.88	50248	10.2.28.2	389	122	base	never	-	1	success	-	(&(&(&(&(&(DnsDomain=easyas123.tech.)(Host=DESKTOP-TEYQ2NR))(DomainSid=S-1-5-21-408266568-3947399335-3725113099))(DomainGuid=006f1537-9919-489e-bd46-e0962fb9af66))(NtVer=0x20000016))(DnsHostName=DESKTOP-TEYQ2NR.easyas123.tech))	-
+1772320020.837081	Cvzto71g75kJxCCoSi	10.2.28.88	54745	10.2.28.2	389	123	base	never	-	1	success	-	(&(&(&(&(DnsDomain=easyas123.tech.)(Host=DESKTOP-TEYQ2NR))(DomainGuid=006f1537-9919-489e-bd46-e0962fb9af66))(NtVer=0x20000016))(DnsHostName=DESKTOP-TEYQ2NR.easyas123.tech))	-
+1772320020.845953	C2Zp1V2Pd4v0a4Wlzf	10.2.28.88	63879	10.2.28.2	389	1	base	never	-	1	success	-	(objectclass=*)	-
+1772320020.856425	Cvzto71g75kJxCCoSi	10.2.28.88	54745	10.2.28.2	389	124	base	never	-	1	success	-	(&(&(&(&(&(DnsDomain=easyas123.tech.)(Host=DESKTOP-TEYQ2NR))(DomainSid=S-1-5-21-408266568-3947399335-3725113099))(DomainGuid=006f1537-9919-489e-bd46-e0962fb9af66))(NtVer=0x20000016))(DnsHostName=DESKTOP-TEYQ2NR.easyas123.tech))	-
+1772320020.964867	CQxYoBMHQH2vIn7zc	10.2.28.88	54747	10.2.28.2	389	125	base	never	-	1	success	-	(&(&(&(&(DnsDomain=easyas123.tech)(Host=DESKTOP-TEYQ2NR))(DomainGuid=006f1537-9919-489e-bd46-e0962fb9af66))(NtVer=0x20000016))(DnsHostName=DESKTOP-TEYQ2NR.easyas123.tech))	-
+1772321559.007856	CY63AH1sNrEH3fC9u9	10.2.28.88	63806	10.2.28.2	389	126	base	never	-	1	success	-	(&(&(&(&(DnsDomain=easyas123.tech.)(Host=DESKTOP-TEYQ2NR))(DomainGuid=006f1537-9919-489e-bd46-e0962fb9af66))(NtVer=0x00000016))(DnsHostName=DESKTOP-TEYQ2NR.easyas123.tech))	-
+1772321559.130876	CLzT3c4V1jNVIUS9S	10.2.28.88	52544	10.2.28.2	389	1	base	never	-	1	success	-	(objectclass=*)	-
+1772321757.619526	CidjUE3V5VOgIVSGHh	10.2.28.88	52549	10.2.28.2	389	1	base	never	-	1	success	-	(objectclass=*)	-
+1772322406.921820	CNzusw3n13TlKfUmC9	10.2.28.88	63693	10.2.28.2	389	127	base	never	-	1	success	-	(&(&(&(&(DnsDomain=easyas123.tech.)(Host=DESKTOP-TEYQ2NR))(DomainGuid=006f1537-9919-489e-bd46-e0962fb9af66))(NtVer=0x20000016))(DnsHostName=DESKTOP-TEYQ2NR.easyas123.tech))	-
+1772322407.025334	CxPI5z1dHE5f2Xny68	10.2.28.88	52562	10.2.28.2	389	1	base	never	-	1	success	-	(objectclass=*)	-
+#close	2026-05-11-07-00-02

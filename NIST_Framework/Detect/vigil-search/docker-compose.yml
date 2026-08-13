@@ -1,0 +1,62 @@
+services:
+  vigil-es:
+    image: elasticsearch:8.11.0
+    container_name: vigil-es
+    restart: unless-stopped
+    environment:
+      discovery.type: single-node
+      xpack.security.enabled: "false"   # Keep disabled only if isolated
+      xpack.ml.enabled: "false"
+      ES_JAVA_OPTS: "-Xms512m -Xmx512m"
+    ports:
+      - "9200:9200"
+    networks:
+      - vigil-net
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    deploy:
+      resources:
+        limits:
+          memory: 1g
+
+  vigil-meili:
+    image: getmeili/meilisearch:v1.7.0
+    container_name: vigil-meili
+    restart: unless-stopped
+    environment:
+      MEILI_MASTER_KEY: "vigil_secret_key_2026"   # moved out of file
+    ports:
+      - "7700:7700"
+    networks:
+      - vigil-net
+    deploy:
+      resources:
+        limits:
+          memory: 512m
+
+  vigil-grafana:
+    image: grafana/grafana:latest
+    container_name: vigil-grafana
+    restart: unless-stopped
+    depends_on:
+      - vigil-es
+    ports:
+      - "3001:3000"
+    volumes:
+      - ./grafana-data:/var/lib/grafana
+    networks:
+      - vigil-net
+    healthcheck:
+      test: ["CMD-SHELL", "wget --quiet --tries=1 ==spider http://prometheus:9090/-/healthy || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+networks:
+  vigil-net:
+    external: true
+    ipam:
+      config:
+        - subnet: 172.18.0.0/16

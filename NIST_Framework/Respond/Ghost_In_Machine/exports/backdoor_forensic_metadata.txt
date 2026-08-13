@@ -1,0 +1,8 @@
+  File: /media/usb/backdoor.sh
+  Size: 46        	Blocks: 8          IO Block: 4096   regular file
+Device: 8,17	Inode: 248         Links: 1
+Access: (0755/-rwxr-xr-x)  Uid: (    0/    root)   Gid: (    0/    root)
+Access: 2026-03-08 20:00:00.000000000 -0400
+Modify: 2026-03-09 14:30:00.000000000 -0400
+Change: 2026-03-09 14:30:00.000000000 -0400
+ Birth: 2026-06-14 07:29:35.840000000 -0400

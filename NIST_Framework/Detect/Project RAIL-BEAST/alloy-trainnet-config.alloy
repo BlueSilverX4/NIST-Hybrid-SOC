@@ -1,0 +1,55 @@
+loki.write "trainnet_loki" {
+  endpoint {
+    url = "http://loki-trainnet:3100/loki/api/v1/push"
+  }
+}
+
+// 1. Discover targets
+local.file_match "dvwa_access" { path_targets = [{ __path__ = "/var/log/dvwa/access.log" }] }
+local.file_match "dvwa_error"  { path_targets = [{ __path__ = "/var/log/dvwa/error.log" }] }
+local.file_match "cowrie"      { path_targets = [{ __path__ = "/var/log/cowrie/cowrie.log" }] }
+local.file_match "nginx_access" { path_targets = [{ __path__ = "/var/log/nginx/access.log" }] }
+local.file_match "nginx_error"  { path_targets = [{ __path__ = "/var/log/nginx/error.log" }] }
+
+// 2. Inject Static Labels
+loki.relabel "dvwa_access_labels" {
+  forward_to = [loki.write.trainnet_loki.receiver]
+  rule { action = "replace" replacement = "dvwa_access" target_label = "job" }
+  rule { action = "replace" replacement = "dvwa" target_label = "service" }
+  rule { action = "replace" replacement = "trainnet" target_label = "source" }
+}
+
+loki.relabel "dvwa_error_labels" {
+  forward_to = [loki.write.trainnet_loki.receiver]
+  rule { action = "replace" replacement = "dvwa_error" target_label = "job" }
+  rule { action = "replace" replacement = "dvwa" target_label = "service" }
+  rule { action = "replace" replacement = "trainnet" target_label = "source" }
+}
+
+loki.relabel "cowrie_labels" {
+  forward_to = [loki.write.trainnet_loki.receiver]
+  rule { action = "replace" replacement = "cowrie" target_label = "job" }
+  rule { action = "replace" replacement = "cowrie" target_label = "service" }
+  rule { action = "replace" replacement = "trainnet" target_label = "source" }
+}
+
+loki.relabel "nginx_access_labels" {
+  forward_to = [loki.write.trainnet_loki.receiver]
+  rule { action = "replace" replacement = "nginx_access" target_label = "job" }
+  rule { action = "replace" replacement = "nginx" target_label = "service" }
+  rule { action = "replace" replacement = "trainnet" target_label = "source" }
+}
+
+loki.relabel "nginx_error_labels" {
+  forward_to = [loki.write.trainnet_loki.receiver]
+  rule { action = "replace" replacement = "nginx_error" target_label = "job" }
+  rule { action = "replace" replacement = "nginx" target_label = "service" }
+  rule { action = "replace" replacement = "trainnet" target_label = "source" }
+}
+
+// 3. Tail files
+loki.source.file "dvwa_access_tail" { targets = local.file_match.dvwa_access.targets forward_to = [loki.relabel.dvwa_access_labels.receiver] }
+loki.source.file "dvwa_error_tail"  { targets = local.file_match.dvwa_error.targets forward_to = [loki.relabel.dvwa_error_labels.receiver] }
+loki.source.file "cowrie_tail"      { targets = local.file_match.cowrie.targets forward_to = [loki.relabel.cowrie_labels.receiver] }
+loki.source.file "nginx_access_tail" { targets = local.file_match.nginx_access.targets forward_to = [loki.relabel.nginx_access_labels.receiver] }
+loki.source.file "nginx_error_tail"  { targets = local.file_match.nginx_error.targets forward_to = [loki.relabel.nginx_error_labels.receiver] }

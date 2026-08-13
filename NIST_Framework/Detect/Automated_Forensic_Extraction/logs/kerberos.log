@@ -1,0 +1,41 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	kerberos
+#open	2026-05-11-06-59-54
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	request_type	client	service	success	error_msg	from	till	cipher	forwardable	renewable	client_cert_subject	client_cert_fuid	server_cert_subject	server_cert_fuid
+#types	time	string	addr	port	addr	port	string	string	string	bool	string	time	time	string	bool	bool	string	string	string	string
+1772308523.048086	CN4tAk2qTNKrZgxRS4	10.2.28.88	59985	10.2.28.2	88	AS	brolf/EASYAS123	krbtgt/EASYAS123	F	KDC_ERR_PREAUTH_REQUIRED	-	4.124486885e+09	-	T	T	-	-	-	-
+1772308523.053672	C6mJl82IGdWXmbjAhb	10.2.28.88	59986	10.2.28.2	88	AS	brolf/EASYAS123	krbtgt/EASYAS123.TECH	T	-	-	4.124486885e+09	aes256-cts-hmac-sha1-96	T	T	-	-	-	-
+1772308523.056724	CUPmUkhguIU8cloe5	10.2.28.88	59987	10.2.28.2	88	TGS	brolf/EASYAS123.TECH	host/desktop-teyq2nr.easyas123.tech	T	-	-	4.124486885e+09	aes256-cts-hmac-sha1-96	T	T	-	-	-	-
+1772308523.225017	C66wYm4Y9ADmCllDqf	10.2.28.88	59989	10.2.28.2	88	TGS	brolf/EASYAS123.TECH	cifs/EASYAS123-DC.easyas123.tech	T	-	-	4.124486885e+09	aes256-cts-hmac-sha1-96	T	T	-	-	-	-
+1772308523.228922	CVdnCf3uJIEFHVoZ88	10.2.28.88	59990	10.2.28.2	88	TGS	brolf/EASYAS123.TECH	krbtgt/EASYAS123.TECH	T	-	-	4.124486885e+09	aes256-cts-hmac-sha1-96	T	T	-	-	-	-
+1772308523.294602	CL2FuWGwrAmu2k0Y2	10.2.28.88	59992	10.2.28.2	88	TGS	brolf/EASYAS123.TECH	cifs/EASYAS123-DC	T	-	-	4.124486885e+09	aes256-cts-hmac-sha1-96	T	T	-	-	-	-
+1772308523.330347	CHOMq31mkOAkQ0zgAg	10.2.28.88	59995	10.2.28.2	88	TGS	brolf/EASYAS123.TECH	LDAP/EASYAS123-DC.easyas123.tech/easyas123.tech	T	-	-	4.124486885e+09	aes256-cts-hmac-sha1-96	T	T	-	-	-	-
+1772308509.694911	C54bIq3DylznJHtzD3	10.2.28.88	59981	10.2.28.2	445	-	-	-	-	-	-	-	-	-	-	-	-	-	-
+1772308523.230963	CjgArb2aXlyyG0VQme	10.2.28.88	59988	10.2.28.2	445	-	-	-	-	-	-	-	-	-	-	-	-	-	-
+1772308558.558966	C85uRHTRd8Lst1MHa	10.2.28.88	51914	10.2.28.2	88	TGS	brolf/EASYAS123.TECH	ldap/easyas123-dc.easyas123.tech	T	-	-	4.124486885e+09	aes256-cts-hmac-sha1-96	T	T	-	-	-	-
+1772309248.507912	Cf0CwX1SnKzo2VnL7	10.2.28.88	59350	10.2.28.2	445	-	-	-	-	-	-	-	-	-	-	-	-	-	-
+1772309409.690045	CCvzN93GCiEElzg3i6	10.2.28.88	59354	10.2.28.2	445	-	-	-	-	-	-	-	-	-	-	-	-	-	-
+1772310309.693001	C9E2dr4W9dHV2lZ9Sf	10.2.28.88	54544	10.2.28.2	445	-	-	-	-	-	-	-	-	-	-	-	-	-	-
+1772311209.702840	ChAe32DpjZrhtm5Qk	10.2.28.88	54568	10.2.28.2	445	-	-	-	-	-	-	-	-	-	-	-	-	-	-
+1772312109.716730	CnVjHvWejDRMvHzok	10.2.28.88	54579	10.2.28.2	445	-	-	-	-	-	-	-	-	-	-	-	-	-	-
+1772313009.719345	CGYuHS1seR2VioY18g	10.2.28.88	63967	10.2.28.2	445	-	-	-	-	-	-	-	-	-	-	-	-	-	-
+1772313481.931319	CkLaaU3HeaDvcd0CJ6	10.2.28.88	55827	10.2.28.2	445	-	-	-	-	-	-	-	-	-	-	-	-	-	-
+1772313909.717942	C75hD01azzea204JHj	10.2.28.88	54895	10.2.28.2	445	-	-	-	-	-	-	-	-	-	-	-	-	-	-
+1772314260.696336	Cfz9wYoWkxIVGkNlg	10.2.28.88	54907	10.2.28.2	445	-	-	-	-	-	-	-	-	-	-	-	-	-	-
+1772315709.732901	CxYuNM2ZoeTktlx7nj	10.2.28.88	54930	10.2.28.2	445	-	-	-	-	-	-	-	-	-	-	-	-	-	-
+1772316609.735634	CALMFC22uHxWGy5M4c	10.2.28.88	58019	10.2.28.2	445	-	-	-	-	-	-	-	-	-	-	-	-	-	-
+1772317092.200762	ClWt0q2X3AXyH1KILd	10.2.28.88	60052	10.2.28.2	445	-	-	-	-	-	-	-	-	-	-	-	-	-	-
+1772317509.738017	CR6uSk3YOEr9ZNT1md	10.2.28.88	57241	10.2.28.2	445	-	-	-	-	-	-	-	-	-	-	-	-	-	-
+1772318409.741712	ClyTfnEIJI99HQjle	10.2.28.88	57248	10.2.28.2	445	-	-	-	-	-	-	-	-	-	-	-	-	-	-
+1772319309.753403	CPgyQo227KjdCeVVQd	10.2.28.88	57270	10.2.28.2	445	-	-	-	-	-	-	-	-	-	-	-	-	-	-
+1772320021.085443	Ct2J8W1W8QgfgsVIw3	10.2.28.88	63883	10.2.28.2	445	-	-	-	-	-	-	-	-	-	-	-	-	-	-
+1772320702.302327	C1AyaC1hb884Q3e8H9	10.2.28.88	62033	10.2.28.2	445	-	-	-	-	-	-	-	-	-	-	-	-	-	-
+1772321109.763692	CSoVwL2QGJSDi1FDR8	10.2.28.88	52540	10.2.28.2	445	-	-	-	-	-	-	-	-	-	-	-	-	-	-
+1772322009.773987	CmiA9bZ1qOGLii0Fd	10.2.28.88	52559	10.2.28.2	445	-	-	-	-	-	-	-	-	-	-	-	-	-	-
+1772322909.774484	CXlEbYC6qYofBnZcb	10.2.28.88	52567	10.2.28.2	445	-	-	-	-	-	-	-	-	-	-	-	-	-	-
+1772323809.789773	C10tcY3nuKRJt4NxBf	10.2.28.88	55966	10.2.28.2	445	-	-	-	-	-	-	-	-	-	-	-	-	-	-
+1772308523.296862	ChuC6OXnkmoz7yEPj	10.2.28.88	59991	10.2.28.2	445	-	-	-	-	-	-	-	-	-	-	-	-	-	-
+#close	2026-05-11-07-00-02

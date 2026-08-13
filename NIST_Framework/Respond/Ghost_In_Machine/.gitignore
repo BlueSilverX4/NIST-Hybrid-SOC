@@ -1,0 +1,13 @@
+cat << 'EOF' > .gitignore
+# Ignore raw forensic images and memory captures
+*.dd
+*.img
+*.raw
+*.E01
+*.vmem
+*.dmp
+
+# Ignore heavy output directories
+/carved_output/
+/extracted_files/
+EOF

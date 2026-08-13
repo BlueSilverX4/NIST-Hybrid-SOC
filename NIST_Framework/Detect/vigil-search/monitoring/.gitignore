@@ -1,0 +1,10 @@
+# Ignore environment variables
+.env
+
+# Ignore Docker volumes/data
+prometheus_data/
+grafana_data/
+
+# Ignore IDE/OS files
+.DS_Store
+.vscode/

@@ -1,0 +1,1 @@
+alert icmp any any -> any any (msg:"RAIL-BEAST TEST ICMP"; sid:1000001; rev:1;)

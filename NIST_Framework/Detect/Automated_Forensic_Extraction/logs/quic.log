@@ -1,0 +1,17 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	quic
+#open	2026-05-11-06-59-55
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	version	client_initial_dcid	client_scid	server_scid	server_name	client_protocol	history
+#types	time	string	addr	port	addr	port	string	string	string	string	string	string	string
+1772308528.001345	C1AHwq2lTrGQUughH6	10.2.28.88	60835	23.205.110.155	443	1	aa7cc069186a7d43	(empty)	1ec2dfa3bdc0572a	www.bing.com	h3	IISiiishhHhhHH
+1772308531.129428	CISDP53CTHFM0uGE65	10.2.28.88	61203	23.205.110.155	443	1	d01e7a8147aac24a	(empty)	01a0d091bcc0572a	www.bing.com	h3	IISiiishIHH
+1772308586.924061	C30FJJBaTmIp5itL2	10.2.28.88	53887	23.205.110.151	443	1	57f3f0f74798cd5b	(empty)	087e14fb5bc0572a	th.bing.com	h3	IISiiishhhHHhHH
+1772308587.009252	CJC3FX3ydsYgMmuSjk	10.2.28.88	60964	23.55.178.219	443	1	49ede2338d5bbd4a	(empty)	06c27b2966c01f31	img-s-msn-com.akamaized.net	h3	IISiiishhhHH
+1772309877.573793	CXxMA72smicnJeZVwi	10.2.28.88	54763	23.205.110.140	443	1	4566fb74027ae513	(empty)	11143ae02ac0572a	th.bing.com	h3	IISiiishhHhhH
+1772309877.574033	CctdG8Q6mLSZywTFg	10.2.28.88	52124	23.205.110.136	443	1	9e897580420dda8f	(empty)	1f8630efacc0572a	www.bing.com	h3	IISiiishhhhHHH
+1772313477.969416	CpFv3G2c4trW58zjBh	10.2.28.88	56817	23.55.178.208	443	1	4527d74e25c1d5dd	(empty)	0c709f5fd8c01f31	img-s-msn-com.akamaized.net	h3	IISiiishhhHHH
+1772313477.969571	CRgP9X2mmtCibb9UF6	10.2.28.88	53424	23.64.115.206	443	1	b4d6405a613da57c	(empty)	0f1ac9176a809328	th.bing.com	h3	IISiiishhIHhhHH
+#close	2026-05-11-07-00-02

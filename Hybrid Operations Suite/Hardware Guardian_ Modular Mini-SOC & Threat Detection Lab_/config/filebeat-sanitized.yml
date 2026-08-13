@@ -1,0 +1,42 @@
+# ============================== Filebeat Configuration ========================
+
+# ------------------------------ Filebeat Inputs -------------------------------
+filebeat.inputs:
+  - type: log
+    enabled: false # Handled by modules below
+
+# ------------------------------ Filebeat Modules ------------------------------
+filebeat.config.modules:
+  path: ${path.config}/modules.d/*.yml
+  reload.enabled: true
+
+# --------------------------------- Processors ---------------------------------
+processors:
+  - add_host_metadata:
+      when.not.contains.tags: forwarded
+
+  - add_cloud_metadata: ~
+
+  - add_docker_metadata: ~
+
+  - add_kubernetes_metadata: ~
+
+# --------------------------------- Outputs ------------------------------------
+
+# Exporting to Elasticsearch
+output.elasticsearch:
+  hosts:
+    - "localhost:9200"
+
+  # If using security, uncomment below:
+  # protocol: "https"
+  # username: "elastic"
+  # password: "changeme"
+
+# --------------------------------- Monitoring ---------------------------------
+
+# Enabled for the "Hardware Guardian" health checks
+monitoring.enabled: true
+monitoring.cluster_uuid: ""
+
+monitoring.elasticsearch:

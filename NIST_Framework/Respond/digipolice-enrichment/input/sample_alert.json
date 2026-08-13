@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-08-02T02:30:00Z",
+  "rule": {
+    "id": "100201",
+    "description": "Suspicious outbound connection and process execution detected"
+  },
+  "agent": {
+    "id": "001",
+    "name": "kali-lab"
+  },
+  "full_log": "SRC_IP=118.25.6.39 DST_IP=192.168.1.50 EXEC_HASH=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 TRIGGERED_CVE=CVE-2021-44228"
+}

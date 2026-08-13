@@ -1,0 +1,22 @@
+==========================================================
+PROJECT: AUTOMATED FORENSIC ARTIFACT EXTRACTION
+CASE: NETSUPPORT RAT (INCIDENT 2026-02-28)
+ANALYST: Brandon Lawrence Gregg
+==========================================================
+
+[+] TARGET IDENTITY
+Hostname: DESKTOP-TEYQ2NR
+IP Address: 10.2.28.88
+MAC Address: 00:19:d1:b2:4d:ad
+
+[+] USER CONTEXT
+User Account: brolf (Brad Rolf)
+
+[+] THREAT INDICATORS
+C2 Server: 45.131.214.85 (Port 443/HTTP)
+Malicious File: json.txt (Text/Plain)
+
+[+] METHODOLOGY
+Analysis performed using Zeek (Network Security Monitor) to
+parse PCAP data into protocol-specific logs for rapid
+incident response.

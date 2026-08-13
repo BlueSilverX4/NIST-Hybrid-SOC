@@ -1,0 +1,41 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	http
+#open	2026-05-19-21-44-23
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	trans_depth	method	host	uri	referrer	version	user_agent	origin	request_body_len	response_body_len	status_code	status_msg	info_code	info_msg	tags	username	password	proxied	orig_fuids	orig_filenames	orig_mime_types	resp_fuids	resp_filenames	resp_mime_types
+#types	time	string	addr	port	addr	port	count	string	string	string	string	string	string	string	count	count	count	string	count	string	set[enum]	string	string	set[string]	vector[string]	vector[string]	vector[string]	vector[string]	vector[string]	vector[string]
+1779241429.950959	CDbLDc3cMaBaoPYOll	192.168.1.61	47846	192.168.1.157	3000	1	-	-	-	-	1.1	-	-	0	15	400	Bad Request	-	-	(empty)	-	-	-	-	-	-	FmtDlK1juLVpZvBdXf	-	text/plain
+1779241430.253710	Cf3ieN3eA0Ll9R6Mc3	192.168.1.61	52590	192.168.1.157	3000	1	GET	-	/	-	1.0	-	-	0	29	302	Found	-	-	(empty)	-	-	-	-	-	-	FJV1972efFbtycTqxg	-	text/plain
+1779241439.978581	CxrWZt1pzp35G4LkYf	192.168.1.61	55170	192.168.1.157	5601	1	OPTIONS	-	/	-	1.1	-	-	0	60	404	Not Found	-	-	(empty)	-	-	-	-	-	-	FYDpL31zgvL4f7P5Oa	-	text/json
+1779241434.961080	CIA5OB1qALwlSZy5df	192.168.1.61	59392	192.168.1.157	5601	1	GET	-	/	-	-	-	-	0	0	-	-	-	-	(empty)	-	-	-	-	-	-	-	-	-
+1779241434.965535	C9YJMV21Bzx6HT5Mva	192.168.1.61	48580	192.168.1.157	9200	1	GET	-	/	-	1.0	-	-	0	541	200	OK	-	-	(empty)	-	-	-	-	-	-	FFPutC2h7po92o9vP6	-	text/json
+1779241445.026134	CkgSF64VviXLnm3bH4	192.168.1.61	57214	192.168.1.157	9200	1	OPTIONS	-	/ RTSP/1.	-	0.9	-	-	0	316	0	<empty>	-	-	(empty)	-	-	-	-	-	-	Fcpwj24WBD73RiMimd	-	text/plain
+1779241439.981309	Cc7bGZ1dtl66AxXs55	192.168.1.61	57206	192.168.1.157	9200	1	OPTIONS	-	/	-	1.0	-	-	0	0	200	OK	-	-	(empty)	-	-	-	-	-	-	-	-	-
+1779241496.205172	C9SvsO2A4qMuc2yGEe	192.168.1.61	53122	192.168.1.157	9200	1	-	-	-	-	1.0	-	-	0	203	400	Bad Request	-	-	(empty)	-	-	-	-	-	-	F2WJUi1pMFnWHgryj6	-	text/json
+1779241499.983599	CvaBL832LQ9LmGnII9	192.168.1.61	36330	192.168.1.157	9200	1	-	-	-	-	1.0	-	-	0	343	400	Bad Request	-	-	(empty)	-	-	-	-	-	-	FP4O0i2JvhRxeVvYdc	-	text/json
+1779241501.286790	CGkPYf35lVqZSomXph	192.168.1.61	53056	192.168.1.157	9200	1	-	-	-	-	1.0	-	-	0	343	400	Bad Request	-	-	(empty)	-	-	-	-	-	-	FGX0PK3BcFGkp4AEQe	-	text/json
+1779241501.366714	CFsOOb2hsV5CYUWFPb	192.168.1.61	36338	192.168.1.157	9200	1	-	-	-	-	1.0	-	-	0	203	400	Bad Request	-	-	(empty)	-	-	-	-	-	-	Fpucoq1dmZlXSb8dE8	-	text/json
+1779241501.453935	CEd6vQ1T3z1edREUH5	192.168.1.61	53052	192.168.1.157	9200	1	-	-	-	-	1.0	-	-	0	343	400	Bad Request	-	-	(empty)	-	-	-	-	-	-	FJx9Bc3mmH6npyRMYj	-	text/json
+1779241503.092297	CBmBHn2pe7uorSvfE3	192.168.1.61	55658	192.168.1.157	9200	1	GET	-	/nice ports,/Trinity.txt.bak	-	1.0	-	-	0	127	405	Method Not Allowed	-	-	(empty)	-	-	-	-	-	-	Fw4n8W2LJB396nfLV6	-	text/json
+1779241506.519547	ClOHXA3JMCzp8YbxUd	192.168.1.61	55670	192.168.1.157	9200	1	-	-	-	-	1.0	-	-	0	343	400	Bad Request	-	-	(empty)	-	-	-	-	-	-	FmDAnw1QXhOcnFbi42	-	text/json
+1779241507.418138	CdIQIh3Ee5vE1o5brk	192.168.1.61	55686	192.168.1.157	9200	1	-	-	-	-	1.0	-	-	0	343	400	Bad Request	-	-	(empty)	-	-	-	-	-	-	FVQFH64lp3a0OOCLBd	-	text/json
+1779241512.467541	CeEJhO3q4VSGo2SxWj	192.168.1.61	48740	192.168.1.157	9200	1	OPTIONS	-	sip:nm SIP/2.	-	0.9	-	-	0	314	0	<empty>	-	-	(empty)	-	-	VIA -> SIP/2.0/TCP nm;branch=foo	-	-	-	Fm8Xm52rHUO7pgf5ej	-	text/plain
+1779241572.051933	CuddK73aA7KJoxqoWi	192.168.1.61	49290	192.168.1.157	3000	1	GET	-	/	-	1.0	-	-	0	29	302	Found	-	-	(empty)	-	-	-	-	-	-	FWFlXa293Ssd4uHpC1	-	text/plain
+1779241572.052270	C9PYiT1w7mXfA5eGN7	192.168.1.61	49298	192.168.1.157	3000	1	GET	DESKTOP-TTT5P7O:3000	/nmaplowercheck1779241571	-	1.1	Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)	-	0	68	302	Found	-	-	(empty)	-	-	-	-	-	-	FZzaCPZQS1ony4Xr5	-	text/plain
+1779241574.273464	CRwwE7139mIB8QvFBl	192.168.1.61	49312	192.168.1.157	3000	1	GET	DESKTOP-TTT5P7O:3000	/HNAP1	-	1.1	Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)	-	0	49	302	Found	-	-	(empty)	-	-	-	-	-	-	FxVVWO2lwuM7c4kxz8	-	text/plain
+1779241574.314383	CSMryg3mAQ7wyNCXo9	192.168.1.61	49328	192.168.1.157	3000	1	GET	DESKTOP-TTT5P7O:3000	/evox/about	-	1.1	Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)	-	0	56	302	Found	-	-	(empty)	-	-	-	-	-	-	FXmIRV1HKxKSbOO5Xk	-	text/plain
+1779241571.962498	CdrQyy24pcOuprVB72	192.168.1.61	57358	192.168.1.157	5601	1	GET	-	/	-	-	-	-	0	0	-	-	-	-	(empty)	-	-	-	-	-	-	-	-	-
+1779241571.996784	CMCubg4hnQteOhbYM1	192.168.1.61	57342	192.168.1.157	5601	1	GET	DESKTOP-TTT5P7O:5601	/nmaplowercheck1779241571	-	-	Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)	-	0	0	-	-	-	-	(empty)	-	-	-	-	-	-	-	-	-
+1779241571.997060	Cf7X7zU7RVKx84jXd	192.168.1.61	57334	192.168.1.157	5601	1	POST	DESKTOP-TTT5P7O:5601	/sdk	-	-	Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)	-	441	0	-	-	-	-	(empty)	-	-	-	F1uNAO2NbmkQBI2aaj	-	application/soap+xml	-	-	-
+1779241574.665172	CKFGuIxJx2YlSWhtc	192.168.1.61	49334	192.168.1.157	3000	1	GET	DESKTOP-TTT5P7O:3000	/login?redirectTo=/evox/about	-	1.1	Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)	-	0	59240	200	OK	-	-	(empty)	-	-	-	-	-	-	FvjJpH1OeMSYzciTY8	-	text/html
+1779241574.476464	Cv68zd30oPDX2YwK2k	192.168.1.61	49332	192.168.1.157	3000	1	GET	DESKTOP-TTT5P7O:3000	/login?redirectTo=/HNAP1	-	1.1	Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)	-	0	59240	200	OK	-	-	(empty)	-	-	-	-	-	-	FuMwsA4L17RL0XapHa	-	text/html
+1779241580.132370	CZzL813barXz92Wkyk	192.168.1.61	39104	192.168.1.157	5601	1	GET	DESKTOP-TTT5P7O:5601	/evox/about	-	-	Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)	-	0	0	-	-	-	-	(empty)	-	-	-	-	-	-	-	-	-
+1779241580.196370	CXfYAzmH3nbkAWBO	192.168.1.61	39106	192.168.1.157	5601	1	GET	DESKTOP-TTT5P7O:5601	/nmaplowercheck1779241571	-	-	Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)	-	0	0	-	-	-	-	(empty)	-	-	-	-	-	-	-	-	-
+1779241587.355610	CQnOJ62eb6BJpYK4S7	192.168.1.61	39152	192.168.1.157	5601	1	GET	DESKTOP-TTT5P7O:5601	/HNAP1	-	1.1	Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)	-	0	60	404	Not Found	-	-	(empty)	-	-	-	-	-	-	F6kSAM341Th4N1sXU2	-	text/json
+1779241593.089560	CulcnS27grP5N0maDa	192.168.1.61	54704	192.168.1.157	3000	1	GET	-	/	-	1.0	-	-	0	29	302	Found	-	-	(empty)	-	-	-	-	-	-	FS93GO1WladMDT3YQ2	-	text/plain
+1779241593.168395	CBiS1S17zoRKswIBed	192.168.1.61	54708	192.168.1.157	3000	1	GET	DESKTOP-TTT5P7O	/	-	1.1	-	-	0	29	302	Found	-	-	(empty)	-	-	-	-	-	-	FTUn6Yz2nl2SFVynj	-	text/plain
+1779241593.090095	C5EhGi1nGSuPrP0umd	192.168.1.61	48108	192.168.1.157	5601	1	GET	-	/	-	1.1	-	-	0	0	302	Found	-	-	(empty)	-	-	-	-	-	-	-	-	-
+1779241595.156619	ChoWg83Atvk9BSXRs9	192.168.1.61	48124	192.168.1.157	5601	1	GET	DESKTOP-TTT5P7O	/	-	1.1	-	-	0	0	302	Found	-	-	(empty)	-	-	-	-	-	-	-	-	-
+#close	2026-05-19-21-51-22

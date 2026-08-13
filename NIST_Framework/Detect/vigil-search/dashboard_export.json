@@ -1,0 +1,20 @@
+{
+    "dashboard": {
+        "title": "Vigil-Net: NIST-Aligned Observability Hub",
+        "panels": [
+            {
+                "title": "Container Memory Usage",
+                "type": "timeseries",
+                "targets": [
+                    {
+                        "expr": "container_memory_usage_bytes{name=\"vigil-es\"}",
+                        "datasource": "Prometheus"
+                    }
+                ]
+            }
+        ]
+    },
+    "meta": {
+        "description": "Exported configuration for the NIST-Aligned observability pipeline."
+    }
+}

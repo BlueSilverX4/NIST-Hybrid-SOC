@@ -1,0 +1,20 @@
+// 1. Actively monitor the samples directory for .eml file creations or modifications
+local.file_match "phishing_logs" {
+    path_targets = [{"__path__" = "/home/brandongregg/Desktop/Operation-PhishShield/samples/*.eml"}]
+}
+
+// 2. Read the changes discovered by the file tracker
+local.file "read_eml" {
+    filename = local.file_match.phishing_logs.outputs.targets[0].__path__
+}
+
+// 3. Connect to the local Elasticsearch SIEM node and stream log indicators
+// Note: This matches the secure index schema we pushed over HTTPS via curl
+otelcol.exporter.otlphttp "elasticsearch" {
+    client {
+        endpoint = "https://localhost:9200/soc-phishshield-logs"
+        tls {
+            insecure_skip_verify = true
+        }
+    }
+}

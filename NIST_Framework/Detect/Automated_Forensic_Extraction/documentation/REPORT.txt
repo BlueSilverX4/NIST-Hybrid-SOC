@@ -1,0 +1,5 @@
+Incident Report: Easy As 123
+Victim: Brad Rolf (brolf)
+Host: DESKTOP-TEYQ2NR (10.2.28.88)
+MAC: 00:19:d1:b2:4d:ad
+Indicator: NetSupport RAT C2 at 45.131.214.85

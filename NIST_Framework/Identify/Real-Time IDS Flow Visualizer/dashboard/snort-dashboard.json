@@ -1,0 +1,221 @@
+{
+  "id": 1,
+  "type": "netsage-sankey-panel",
+  "title": "IDS Live Traffic ",
+  "gridPos": {
+    "x": 0,
+    "y": 0,
+    "h": 8,
+    "w": 12
+  },
+  "fieldConfig": {
+    "defaults": {
+      "mappings": [],
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          {
+            "value": null,
+            "color": "green"
+          },
+          {
+            "value": 80,
+            "color": "red"
+          }
+        ]
+      },
+      "color": {
+        "mode": "thresholds"
+      }
+    },
+    "overrides": [
+      {
+        "matcher": {
+          "id": "byName",
+          "options": "Origin / Attacker IP"
+        },
+        "properties": [
+          {
+            "id": "actions",
+            "value": [
+              {
+                "type": "fetch",
+                "title": "VirusTotal Lookup",
+                "fetch": {
+                  "url": "https://virustotal.com{__value.text}",
+                  "method": "POST",
+                  "body": "{}",
+                  "queryParams": [],
+                  "headers": [
+                    [
+                      "Content-Type",
+                      "application/json"
+                    ]
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "matcher": {
+          "id": "byName",
+          "options": "Target / Asset IP"
+        },
+        "properties": [
+          {
+            "id": "actions",
+            "value": [
+              {
+                "type": "fetch",
+                "title": "Virus Total Lookup",
+                "fetch": {
+                  "url": "https://virustotal.com{__value.text}",
+                  "method": "GET",
+                  "body": "{}",
+                  "queryParams": [],
+                  "headers": [
+                    [
+                      "Content-Type",
+                      "application/json"
+                    ]
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "transformations": [
+    {
+      "id": "joinByField",
+      "options": {
+        "byField": "source_ip",
+        "mode": "outerTabular"
+      }
+    },
+    {
+      "id": "calculateField",
+      "options": {
+        "alias": "mainstat",
+        "binary": {
+          "left": {
+            "matcher": {
+              "id": "byName",
+              "options": "Count 1"
+            }
+          },
+          "right": {
+            "matcher": {
+              "id": "byName",
+              "options": "Count 2"
+            }
+          }
+        },
+        "mode": "binary",
+        "reduce": {
+          "reducer": "sum"
+        },
+        "replaceFields": false
+      }
+    },
+    {
+      "id": "organize",
+      "options": {
+        "excludeByName": {
+          "Count 1": true,
+          "Count 2": true,
+          "mainstat": false,
+          "source_ip": false
+        },
+        "indexByName": {},
+        "renameByName": {
+          "Count": "Event Count (Total)",
+          "destination_ip": "Target / Asset IP",
+          "source_ip": "Origin / Attacker IP"
+        },
+        "includeByName": {},
+        "orderByMode": "manual"
+      }
+    },
+    {
+      "id": "filterByValue",
+      "options": {
+        "filters": [
+          {
+            "fieldName": "Event Count (Total)",
+            "config": {
+              "id": "greater",
+              "options": {
+                "value": "1"
+              }
+            }
+          }
+        ],
+        "type": "include",
+        "match": "any"
+      }
+    }
+  ],
+  "pluginVersion": "1.1.4",
+  "targets": [
+    {
+      "alias": "id",
+      "bucketAggs": [
+        {
+          "field": "source_ip",
+          "id": "2",
+          "settings": {
+            "min_doc_count": "1",
+            "order": "desc",
+            "orderBy": "_term",
+            "size": "10"
+          },
+          "type": "terms"
+        },
+        {
+          "id": "3",
+          "type": "terms",
+          "settings": {
+            "min_doc_count": "1",
+            "size": "10",
+            "order": "desc",
+            "orderBy": "_term"
+          },
+          "field": "destination_ip"
+        }
+      ],
+      "datasource": {
+        "type": "elasticsearch",
+        "uid": "ffiyo4uqfwvswc"
+      },
+      "editorType": "builder",
+      "metrics": [
+        {
+          "id": "1",
+          "type": "count"
+        }
+      ],
+      "query": "",
+      "rawDSLQuery": "",
+      "refId": "A",
+      "timeField": "@timestamp"
+    }
+  ],
+  "datasource": {
+    "type": "elasticsearch",
+    "uid": "ffiyo4uqfwvswc"
+  },
+  "options": {
+    "monochrome": false,
+    "color": "blue",
+    "nodeColor": "light-red",
+    "nodeWidth": 20,
+    "nodePadding": 30,
+    "labelSize": 12,
+    "iteration": 7
+  }
+}

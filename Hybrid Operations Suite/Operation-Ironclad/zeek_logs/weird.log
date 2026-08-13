@@ -1,0 +1,23 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	weird
+#open	2026-05-19-21-43-53
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	name	addl	notice	peer	source
+#types	time	string	addr	port	addr	port	string	string	bool	string	string
+1779241429.950959	CDbLDc3cMaBaoPYOll	192.168.1.61	47846	192.168.1.157	3000	bad_HTTP_request	-	F	zeek	HTTP
+1779241429.950959	CDbLDc3cMaBaoPYOll	192.168.1.61	47846	192.168.1.157	3000	empty_http_request	-	F	zeek	HTTP
+1779241445.026134	CkgSF64VviXLnm3bH4	192.168.1.61	57214	192.168.1.157	9200	invalid_http_09_request_method	OPTIONS	F	zeek	HTTP
+1779241496.205172	C9SvsO2A4qMuc2yGEe	192.168.1.61	53122	192.168.1.157	9200	bad_HTTP_request	-	F	zeek	HTTP
+1779241499.983599	CvaBL832LQ9LmGnII9	192.168.1.61	36330	192.168.1.157	9200	bad_HTTP_request	-	F	zeek	HTTP
+1779241501.286790	CGkPYf35lVqZSomXph	192.168.1.61	53056	192.168.1.157	9200	bad_HTTP_request	-	F	zeek	HTTP
+1779241501.366714	CFsOOb2hsV5CYUWFPb	192.168.1.61	36338	192.168.1.157	9200	bad_HTTP_request	-	F	zeek	HTTP
+1779241501.453935	CEd6vQ1T3z1edREUH5	192.168.1.61	53052	192.168.1.157	9200	bad_HTTP_request	-	F	zeek	HTTP
+1779241501.453935	CEd6vQ1T3z1edREUH5	192.168.1.61	53052	192.168.1.157	9200	line_terminated_with_single_CR	-	F	zeek	CONTENTLINE
+1779241506.519547	ClOHXA3JMCzp8YbxUd	192.168.1.61	55670	192.168.1.157	9200	bad_HTTP_request	-	F	zeek	HTTP
+1779241507.418138	CdIQIh3Ee5vE1o5brk	192.168.1.61	55686	192.168.1.157	9200	bad_HTTP_request	-	F	zeek	HTTP
+1779241512.467541	CeEJhO3q4VSGo2SxWj	192.168.1.61	48740	192.168.1.157	9200	invalid_http_09_request_method	OPTIONS	F	zeek	HTTP
+1779241571.151482	C8Zgm94bcUboaqstfb	192.168.1.61	39637	192.168.1.157	3000	baroque_SYN	-	F	zeek	TCP
+1779241571.300577	C8Zgm94bcUboaqstfb	192.168.1.61	39637	192.168.1.157	3000	premature_connection_reuse	-	F	zeek	TCP
+#close	2026-05-19-21-51-22

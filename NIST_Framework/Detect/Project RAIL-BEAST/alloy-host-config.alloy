@@ -1,0 +1,19 @@
+loki.write "local_loki" {
+  endpoint {
+    url = "http://loki-host:3100/loki/api/v1/push"
+  }
+}
+
+// 1. Discover the Snort alert log target
+local.file_match "snort_project" {
+  path_targets = [{
+    __path__ = "/snort_logs/alert_fast.txt",
+    job      = "snort_project",
+  }]
+}
+
+// 2. Tail the file and forward directly to Loki
+loki.source.file "snort_project_tail" {
+  targets    = local.file_match.snort_project.targets
+  forward_to = [loki.write.local_loki.receiver]
+}

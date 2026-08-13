@@ -1,0 +1,5 @@
+{
+    "log_file": "logs/ids_alerts.log",
+    "target_chain": "DOCKER-USER",
+    "threat_keyword": "MALICIOUS"
+}

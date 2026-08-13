@@ -1,0 +1,43 @@
+How to use your snort.lua effectively:
+
+1. Create a "Highlights" snippet:
+In your GitHub /configs folder, create a file named snort-logic-highlights.lua. Instead of the whole file, just paste the specific sections you modified, such as:
+
+    The Output Section: Where you enabled alert_json.
+
+    The Network Variables: Where you defined your HOME_NET.
+
+    The Rules Path: Where you pointed Snort to your local.rules.
+
+2. Link it to your README.md:
+In the "Engineering Challenges" section of your README, you can mention:
+
+    "Configured the snort.lua logging outputs to generate JSON-formatted alerts, ensuring compatibility with the Filebeat ingestion layer."
+
+A Quick Reality Check on GitHub
+
+Since you're using Kali Purple, if your snort.lua contains your actual internal home IP addresses (like 192.168.x.x), it's a good habit to "sanitize" them before pushing to a public GitHub repo.
+
+    Change: HOME_NET = '192.168.1.15/24'
+
+    To: HOME_NET = 'YOUR_HOME_NET_HERE'
+
+Your Final Portfolio Folder Structure
+
+Now that you have all the pieces, your GitHub repository should look like this:
+
+    📁 dashboards/
+
+        snort-flow-visualizer.json (Your Grafana export)
+
+    📁 configs/
+
+        filebeat-snort.yml (The shipping logic)
+
+        snort-highlights.lua (The Snort 3 logic)
+
+    📁 screenshots/
+
+        (The Sankey and VirusTotal images)
+
+    📄 README.md (The "homepage" we drafted)

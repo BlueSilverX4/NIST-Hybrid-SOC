@@ -1,0 +1,16 @@
+{
+  "mappings": {
+    "properties": {
+      "@timestamp": { "type": "date" },
+      "email": {
+        "properties": {
+          "sender": { "type": "keyword" },
+          "recipient": { "type": "keyword" },
+          "subject": { "type": "text" },
+          "simulation_id": { "type": "keyword" },
+          "authorized_test": { "type": "boolean" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+Snort 3 IDS Flow Visualizer
+Real-Time Network Traffic Analysis & Threat Intelligence Integration
+📌 Project Overview
+
+This project transforms raw Snort 3 Intrusion Detection System (IDS) logs into a high-visibility security dashboard. By leveraging the ELK Stack (Elasticsearch, Filebeat) and Grafana, I created a visualization pipeline that allows security analysts to identify "top-talker" attacker IPs and perform instant threat reputation lookups.
+🛠️ Tech Stack
+
+    IDS: Snort 3
+
+    Security OS: Kali Purple
+
+    Data Pipeline: Filebeat & Elasticsearch
+
+    Visualization: Grafana (Sankey Panel Plugin)
+
+    Threat Intel: VirusTotal API Integration
+
+🚀 Key Features
+
+    Sankey Traffic Flow: Visualizes the volume of traffic between Origin / Attacker IPs and Target / Asset IPs, making it easy to spot scanning activity or potential lateral movement.
+
+    Advanced Data Transformations: Utilized Grafana binary operations to merge disparate data frames (Source/Destination counts) into a unified traffic metric.
+
+    Click-to-Investigate: Integrated custom Data Links that allow users to click any IP in the dashboard to launch an immediate reputation check on VirusTotal.
+
+    Threshold-Based Alerting: Nodes change color (Green to Red) based on traffic volume, reducing "log fatigue" for analysts.
+
+📂 Repository Contents
+
+    /dashboards: Contains the snort-flow-visualizer.json export. You can import this into your own Grafana instance to replicate the setup.
+
+    /screenshots: Visual proof of the live dashboard and threat intelligence links.
+
+    /configs: Example filebeat.yml and Snort 3 configuration snippets used for this pipeline.
+
+💡 Engineering Challenges
+
+    Schema Auditing: Successfully audited Elasticsearch index mappings to resolve "Field Not Found" errors by identifying the correct JSON paths for IP metadata.
+
+    Logic Merging: Overcame limitations in single-query frames by implementing a transformation sequence: Join by field -> Add field from calculation -> Organize fields.
+
+🤖 AI Collaboration
+
+This project workflow was optimized using Google Gemini as a technical co-pilot for debugging complex Grafana transformations, auditing nested JSON structures, and architecting the data pipeline documentation.
+
+Author: Brandon Lawrence Gregg
+
+Certifications: Cybersecurity Certificate | SQL Certificate
+How to add this to GitHub:
+
+    Go to your repository on GitHub.
+
+    Click Add file -> Create new file.
+
+    Name the file README.md.
+
+    Paste the text above.
+
+    Scroll down and click Commit changes.

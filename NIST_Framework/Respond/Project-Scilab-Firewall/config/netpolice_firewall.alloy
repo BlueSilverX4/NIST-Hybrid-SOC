@@ -1,0 +1,91 @@
+// =============================================================================
+// Project Scilab Firewall
+// NETPOLICE UnderNet Hunter
+//
+// Purpose:
+//   Collect Linux kernel firewall logs, extract useful network metadata,
+//   and forward structured events to Grafana Loki.
+//
+// Pipeline:
+//
+//   /var/log/kern.log
+//         │
+//         ▼
+//   local.file_match
+//         │
+//         ▼
+//   loki.source.file
+//         │
+//         ▼
+//   stage.match (job selector with line filter)
+//         │
+//         ▼
+//   Regex Parsing
+//         │
+//         ▼
+//   Label Enrichment
+//         │
+//         ▼
+//   Loki (scilab_loki_sink)
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// Kernel Log Source
+// -----------------------------------------------------------------------------
+local.file_match "syslog_source" {
+  path_targets = [{
+    __address__ = "localhost",
+    __path__    = "/var/log/kern.log",
+    job         = "netpolice-undernet-hunter",
+  }]
+}
+
+// -----------------------------------------------------------------------------
+// Read Log File
+// -----------------------------------------------------------------------------
+loki.source.file "firewall_stream" {
+  targets = local.file_match.syslog_source.targets
+
+  forward_to = [
+    loki.process.parse_undernet_drops.receiver,
+  ]
+}
+
+// -----------------------------------------------------------------------------
+// Parse Firewall Events
+// -----------------------------------------------------------------------------
+loki.process "parse_undernet_drops" {
+
+  // Only process logs that are tagged with our job AND contain the firewall prefix.
+  // Everything else in /var/log/kern.log will be dropped automatically!
+  stage.match {
+    selector = "{job=\"netpolice-undernet-hunter\"} |= \"NETPOLICE_DROP:\""
+
+    // Extract network metadata from NETPOLICE firewall logs.
+    stage.regex {
+      expression = "NETPOLICE_DROP:.*SRC=(?P<src_ip>[0-9.]+).*PROTO=(?P<protocol>[A-Z]+)(?:.*DPT=(?P<dst_port>\\d+))?"
+    }
+
+    // Promote extracted values to Loki labels.
+    stage.labels {
+      values = {
+        src_ip   = "src_ip",
+        protocol = "protocol",
+        dst_port = "dst_port",
+      }
+    }
+  }
+
+  forward_to = [
+    loki.write.scilab_loki_sink.receiver,
+  ]
+}
+
+// -----------------------------------------------------------------------------
+// Loki Output
+// -----------------------------------------------------------------------------
+loki.write "scilab_loki_sink" {
+  endpoint {
+    url = "http://127.0.0.1:3100/loki/api/v1/push"
+  }
+}

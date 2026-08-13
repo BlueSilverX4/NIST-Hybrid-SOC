@@ -1,0 +1,11 @@
+# Virtual Environment
+venv/
+
+# Python Bytecode / Caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Generated Outputs (Optional: keep sample outputs, ignore dynamic runs if needed)
+# output/reports/*.md
