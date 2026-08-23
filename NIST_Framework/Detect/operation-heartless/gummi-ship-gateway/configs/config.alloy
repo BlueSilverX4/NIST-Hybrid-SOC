@@ -1,0 +1,38 @@
+// 1. Loki Client Definition
+loki.write "local_loki" {
+  endpoint {
+    url = "http://127.0.0.1:3100/loki/api/v1/push"
+  }
+}
+
+// 2. Target Discovery for Zeek conn.log
+local.file_match "zeek_conn" {
+  path_targets = [{
+    __path__ = "/home/brandongregg/Portfolios/operation-heartless/gummi-ship-gateway/logs/conn.log",
+    job      = "operation-heartless",
+    realm    = "gummi-ship-gateway",
+    sensor   = "zeek-conn",
+  }]
+}
+
+// 3. Target Discovery for Zeek dns.log
+local.file_match "zeek_dns" {
+  path_targets = [{
+    __path__ = "/home/brandongregg/Portfolios/operation-heartless/gummi-ship-gateway/logs/dns.log",
+    job      = "operation-heartless",
+    realm    = "gummi-ship-gateway",
+    sensor   = "zeek-dns",
+  }]
+}
+
+// 4. Ingest and forward Zeek conn logs to Loki
+loki.source.file "zeek_conn_scrape" {
+  targets    = local.file_match.zeek_conn.targets
+  forward_to = [loki.write.local_loki.receiver]
+}
+
+// 5. Ingest and forward Zeek dns logs to Loki
+loki.source.file "zeek_dns_scrape" {
+  targets    = local.file_match.zeek_dns.targets
+  forward_to = [loki.write.local_loki.receiver]
+}

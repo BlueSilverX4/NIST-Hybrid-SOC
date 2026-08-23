@@ -1,0 +1,34 @@
+positions:
+  ? path: /opt/zeek/logs/current/telemetry.log
+    labels: '{job="zeek"}'
+  : "179"
+  ? path: /opt/zeek/logs/current/stdout.log
+    labels: '{job="zeek"}'
+  : "51"
+  ? path: /opt/zeek/logs/current/conn.log
+    labels: '{job="zeek"}'
+  : "370"
+  ? path: /opt/zeek/logs/current/stats.log
+    labels: '{job="zeek"}'
+  : "478"
+  ? path: /opt/zeek/logs/current/dhcp.log
+    labels: '{job="zeek"}'
+  : "270"
+  ? path: /opt/zeek/logs/current/capture_loss.log
+    labels: '{job="zeek"}'
+  : "107"
+  ? path: /opt/zeek/logs/current/stderr.log
+    labels: '{job="zeek"}'
+  : "19"
+  ? path: /opt/zeek/logs/current/quic.log
+    labels: '{job="zeek"}'
+  : "390"
+  ? path: /opt/zeek/logs/current/dns.log
+    labels: '{job="zeek"}'
+  : "1745"
+  ? path: /opt/zeek/logs/current/ssl.log
+    labels: '{job="zeek"}'
+  : "316"
+  ? path: /opt/zeek/logs/current/x509.log
+    labels: '{job="zeek"}'
+  : "662"

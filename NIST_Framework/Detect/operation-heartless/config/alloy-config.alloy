@@ -1,0 +1,35 @@
+// Operation Heartless — Authentication Telemetry Pipeline
+// Reads the sample auth log, extracts syslog fields, and forwards events to Loki.
+
+loki.source.file "heartless_telemetry" {
+  targets = [{
+    __path__ = "/home/brandongregg/Portfolios/operation-heartless/logs/sample_auth.log",
+    job      = "operation-heartless",
+    realm    = "realm-of-light",
+  }]
+
+  forward_to = [loki.process.threat_parser.receiver]
+}
+
+// Parse syslog-style entries and attach SOC metadata.
+loki.process "threat_parser" {
+  stage.regex {
+    expression = "^(?P<timestamp>\\S+\\s+\\d+\\s+\\d{2}:\\d{2}:\\d{2})\\s+(?P<target_node>\\S+)\\s+(?P<process>[^:]+):.*"
+  }
+
+  stage.labels {
+    values = {
+      target_node = "",
+      process     = "",
+    }
+  }
+
+  forward_to = [loki.write.local_loki.receiver]
+}
+
+// Send processed telemetry to the local Loki instance.
+loki.write "local_loki" {
+  endpoint {
+    url = "http://localhost:3100/loki/api/v1/push"
+  }
+}

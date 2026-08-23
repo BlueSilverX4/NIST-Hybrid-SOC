@@ -1,0 +1,4 @@
+positions:
+  ? path: /home/brandongregg/Portfolios/operation-heartless/logs/sample_auth.log
+    labels: '{job="operation-heartless", realm="realm-of-light"}'
+  : "4549"

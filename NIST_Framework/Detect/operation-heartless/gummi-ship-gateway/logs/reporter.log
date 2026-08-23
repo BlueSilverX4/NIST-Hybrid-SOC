@@ -1,0 +1,2 @@
+{"ts":1787304910.650046,"level":"Reporter::INFO","message":"received termination signal","location":""}
+{"ts":1787304910.650046,"level":"Reporter::INFO","message":"918 packets received on interface wlan0, 0 (0.00%) dropped, 37 (4.03%) not processed","location":""}

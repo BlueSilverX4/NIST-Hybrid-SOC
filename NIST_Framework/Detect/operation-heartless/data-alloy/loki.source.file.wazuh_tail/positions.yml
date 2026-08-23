@@ -1,0 +1,4 @@
+positions:
+  ? path: /var/ossec/logs/alerts/alerts.json
+    labels: '{job="wazuh"}'
+  : "6390136"

@@ -1,0 +1,32 @@
+groups:
+  - name: gummi_ship_network_rules
+    rules:
+      # 1. High-Volume Connection Attempt / Potential Port Scan
+      - alert: GummiShipPotentialPortScan
+        expr: |
+          sum by (id_orig_h) (
+            rate({realm="gummi-ship-gateway", sensor="zeek-conn"} | json | conn_state="S0" [1m])
+          ) > 5
+        for: 30s
+        labels:
+          severity: warning
+          realm: gummi-ship-gateway
+          target_node: shadow-realm
+        annotations:
+          summary: "Potential port scan or connection sweep detected"
+          description: "Source IP {{ $labels.id_orig_h }} initiated more than 5 unacknowledged SYN connection attempts (S0) in 1 minute."
+
+      # 2. Anomalous DNS Query Burst / Potential C2 Activity
+      - alert: GummiShipDNSQueryBurst
+        expr: |
+          sum by (id_orig_h) (
+            rate({realm="gummi-ship-gateway", sensor="zeek-dns"} | json [1m])
+          ) > 10
+        for: 30s
+        labels:
+          severity: critical
+          realm: gummi-ship-gateway
+          target_node: shadow-realm
+        annotations:
+          summary: "High volume DNS query burst detected"
+          description: "Source IP {{ $labels.id_orig_h }} generated an unusually high rate of DNS requests (>10/min)."

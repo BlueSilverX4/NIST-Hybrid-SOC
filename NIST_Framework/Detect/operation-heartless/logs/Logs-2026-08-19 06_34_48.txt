@@ -1,0 +1,91 @@
+: "86 lines displayed"
+Total bytes processed: "14.0  kB"
+Common labels: {"detected_level":"unknown","filename":"/home/brandongregg/Portfolios/operation-heartless/logs/sample_auth.log","job":"operation-heartless","realm":"realm-of-light","service_name":"operation-heartless","target_node":"target-node"}
+
+
+1787135022525	2026-08-19T10:23:42.525Z	Aug 19 06:23:42 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787135022480	2026-08-19T10:23:42.480Z	Aug 19 06:23:42 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787135022274	2026-08-19T10:23:42.274Z	Aug 19 06:23:42 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787135022229	2026-08-19T10:23:42.229Z	Aug 19 06:23:42 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787135022019	2026-08-19T10:23:42.019Z	Aug 19 06:23:41 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787135021977	2026-08-19T10:23:41.977Z	Aug 19 06:23:41 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787135021768	2026-08-19T10:23:41.768Z	Aug 19 06:23:41 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787135021727	2026-08-19T10:23:41.727Z	Aug 19 06:23:41 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787135021516	2026-08-19T10:23:41.516Z	Aug 19 06:23:41 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787135021475	2026-08-19T10:23:41.475Z	Aug 19 06:23:41 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787135021265	2026-08-19T10:23:41.265Z	Aug 19 06:23:41 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787135021224	2026-08-19T10:23:41.224Z	Aug 19 06:23:41 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787135021014	2026-08-19T10:23:41.014Z	Aug 19 06:23:40 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787135020974	2026-08-19T10:23:40.974Z	Aug 19 06:23:40 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787135020739	2026-08-19T10:23:40.739Z	Aug 19 06:23:40 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787135020739	2026-08-19T10:23:40.739Z	Aug 19 06:23:40 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787135020722	2026-08-19T10:23:40.722Z	Aug 19 06:23:40 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787135020471	2026-08-19T10:23:40.471Z	Aug 19 06:23:40 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787135020216	2026-08-19T10:23:40.216Z	Aug 19 06:23:39 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787135020088	2026-08-19T10:23:40.088Z	Aug 19 06:23:39 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787092877259	2026-08-18T22:41:17.259Z	Aug 18 18:41:17 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787092877259	2026-08-18T22:41:17.259Z	Aug 18 18:41:17 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787092877145	2026-08-18T22:41:17.145Z	Aug 18 18:41:17 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787092877145	2026-08-18T22:41:17.145Z	Aug 18 18:41:17 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787092876982	2026-08-18T22:41:16.982Z	Aug 18 18:41:16 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787092876982	2026-08-18T22:41:16.982Z	Aug 18 18:41:16 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787092876894	2026-08-18T22:41:16.894Z	Aug 18 18:41:16 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787092876894	2026-08-18T22:41:16.894Z	Aug 18 18:41:16 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787092876730	2026-08-18T22:41:16.730Z	Aug 18 18:41:16 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787092876643	2026-08-18T22:41:16.643Z	Aug 18 18:41:16 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787092876643	2026-08-18T22:41:16.643Z	Aug 18 18:41:16 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787092876479	2026-08-18T22:41:16.479Z	Aug 18 18:41:16 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787092876479	2026-08-18T22:41:16.479Z	Aug 18 18:41:16 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787092876390	2026-08-18T22:41:16.390Z	Aug 18 18:41:16 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787092876389	2026-08-18T22:41:16.389Z	Aug 18 18:41:16 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787092876229	2026-08-18T22:41:16.229Z	Aug 18 18:41:16 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787092876229	2026-08-18T22:41:16.229Z	Aug 18 18:41:16 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787092876138	2026-08-18T22:41:16.138Z	Aug 18 18:41:16 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787092876136	2026-08-18T22:41:16.136Z	Aug 18 18:41:15 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787092875978	2026-08-18T22:41:15.978Z	Aug 18 18:41:15 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787092875978	2026-08-18T22:41:15.978Z	Aug 18 18:41:15 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787092875885	2026-08-18T22:41:15.885Z	Aug 18 18:41:15 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787092875885	2026-08-18T22:41:15.885Z	Aug 18 18:41:15 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787092875722	2026-08-18T22:41:15.722Z	Aug 18 18:41:15 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787092875722	2026-08-18T22:41:15.722Z	Aug 18 18:41:15 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787092875634	2026-08-18T22:41:15.634Z	Aug 18 18:41:15 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787092875383	2026-08-18T22:41:15.383Z	Aug 18 18:41:15 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787092875383	2026-08-18T22:41:15.383Z	Aug 18 18:41:15 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787092875346	2026-08-18T22:41:15.346Z	Aug 18 18:41:15 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787092875277	2026-08-18T22:41:15.277Z	Aug 18 18:41:15 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787091674100	2026-08-18T22:21:14.100Z	Aug 18 18:21:13 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787091674085	2026-08-18T22:21:14.085Z	Aug 18 18:21:13 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787091673849	2026-08-18T22:21:13.849Z	Aug 18 18:21:13 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787091673834	2026-08-18T22:21:13.834Z	Aug 18 18:21:13 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787091673598	2026-08-18T22:21:13.598Z	Aug 18 18:21:13 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787091673580	2026-08-18T22:21:13.580Z	Aug 18 18:21:13 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787091673580	2026-08-18T22:21:13.580Z	Aug 18 18:21:13 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787091673347	2026-08-18T22:21:13.347Z	Aug 18 18:21:13 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787091673277	2026-08-18T22:21:13.277Z	Aug 18 18:21:13 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787091673096	2026-08-18T22:21:13.096Z	Aug 18 18:21:13 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787091673096	2026-08-18T22:21:13.096Z	Aug 18 18:21:12 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787091673026	2026-08-18T22:21:13.026Z	Aug 18 18:21:12 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787091672844	2026-08-18T22:21:12.844Z	Aug 18 18:21:10 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787091672772	2026-08-18T22:21:12.772Z	Aug 18 18:21:10 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787091670763	2026-08-18T22:21:10.763Z	Aug 18 18:21:10 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787091670586	2026-08-18T22:21:10.586Z	Aug 18 18:21:10 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787091670586	2026-08-18T22:21:10.586Z	Aug 18 18:21:10 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787091670510	2026-08-18T22:21:10.510Z	Aug 18 18:21:10 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787091670510	2026-08-18T22:21:10.510Z	Aug 18 18:21:10 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787091670510	2026-08-18T22:21:10.510Z	Aug 18 18:21:09 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787091670334	2026-08-18T22:21:10.334Z	Aug 18 18:21:10 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787091670322	2026-08-18T22:21:10.322Z	Aug 18 18:21:09 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787091670322	2026-08-18T22:21:10.322Z	Aug 18 18:21:09 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787091670322	2026-08-18T22:21:10.322Z	Aug 18 18:21:09 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787091670253	2026-08-18T22:21:10.253Z	Aug 18 18:21:09 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787091669848	2026-08-18T22:21:09.848Z	Aug 18 18:21:09 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787091669848	2026-08-18T22:21:09.848Z	Aug 18 18:21:09 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787091669419	2026-08-18T22:21:09.419Z	Aug 18 18:21:09 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787091669168	2026-08-18T22:21:09.168Z	Aug 18 18:21:08 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787091669149	2026-08-18T22:21:09.149Z	Aug 18 18:21:08 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787060207411	2026-08-18T13:36:47.411Z	Aug 17 09:47:16 target-node sudo: heartless_spawn : TTY=pts/0 ; PWD=/home/user ; USER=root ; COMMAND=/bin/bash
+1787060207408	2026-08-18T13:36:47.408Z	Aug 17 09:47:16 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787060207400	2026-08-18T13:36:47.400Z	Aug 17 09:46:25 target-node sudo: heartless_spawn : TTY=pts/0 ; PWD=/home/user ; USER=root ; COMMAND=/bin/bash
+1787060207400	2026-08-18T13:36:47.400Z	Aug 17 09:46:25 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2
+1787060207392	2026-08-18T13:36:47.392Z	Aug 17 09:46:16 target-node sudo: heartless_spawn : TTY=pts/0 ; PWD=/home/user ; USER=root ; COMMAND=/bin/bash
+1787060207342	2026-08-18T13:36:47.342Z	Aug 17 09:46:16 target-node sshd[1234]: Failed password for invalid user heartless_spawn from 192.168.1.100 port 45678 ssh2

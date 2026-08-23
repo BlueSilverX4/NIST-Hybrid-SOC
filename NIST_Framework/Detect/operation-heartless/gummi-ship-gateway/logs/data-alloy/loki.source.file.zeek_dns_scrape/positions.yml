@@ -1,0 +1,4 @@
+positions:
+  ? path: /home/brandongregg/Portfolios/operation-heartless/gummi-ship-gateway/logs/dns.log
+    labels: '{job="operation-heartless", realm="gummi-ship-gateway", sensor="zeek-dns"}'
+  : "322731"

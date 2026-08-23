@@ -1,0 +1,21 @@
+title: Darkside Alert - Local Privilege Escalation Detected
+id: 9a8b7c6d-4321-4a1b-9876-0123456789ab
+status: experimental
+description: Detects rapid escalation of privileges (Heartless consuming root access).
+author: SOC Analyst
+logsource:
+    category: process_creation
+    product: linux
+detection:
+    selection:
+        CommandLine|contains:
+            - 'sudo su'
+            - 'chmod +s'
+            - 'usermod -aG sudo'
+    condition: selection
+falsepositives:
+    - Legitimate administrative maintenance
+level: critical
+tags:
+    - attack.privilege_escalation
+    - attack.t1548

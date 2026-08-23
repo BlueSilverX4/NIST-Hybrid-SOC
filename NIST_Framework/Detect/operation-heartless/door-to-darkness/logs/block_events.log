@@ -1,0 +1,13 @@
+2026-08-21 08:29:09,122 [INFO] [DOOR-TO-DARKNESS] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.157:5001
+2026-08-21 08:29:09,123 [INFO] [DOOR-TO-DARKNESS] [33mPress CTRL+C to quit[0m
+2026-08-21 08:30:08,146 [INFO] [DOOR-TO-DARKNESS] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.157:5001
+2026-08-21 08:30:08,205 [INFO] [DOOR-TO-DARKNESS] [33mPress CTRL+C to quit[0m
+2026-08-21 08:30:42,495 [INFO] [DOOR-TO-DARKNESS] Triggered Alert 'GummiShipPotentialPortScan' for IP: 192.168.1.200
+2026-08-21 08:30:47,848 [INFO] [DOOR-TO-DARKNESS] KEYBLADE LOCKED: Successfully dropped traffic from IP 192.168.1.200
+2026-08-21 08:30:47,849 [INFO] [DOOR-TO-DARKNESS] 127.0.0.1 - - [21/Aug/2026 08:30:47] "POST /webhook HTTP/1.1" 200 -
