@@ -1,0 +1,15 @@
+{
+  "sensor": {
+    "log_file": "mock_auth.log",
+    "threshold": 3,
+    "time_window_seconds": 10
+  },
+  "asset": {
+    "target_name": "Hospital-EHR-Vault-Node-01",
+    "attacker_ip": "192.168.1.50"
+  },
+  "response": {
+    "action": "scorched_earth_quarantine",
+    "snapshot_path": "logs/forensic_snapshot.txt"
+  }
+}
