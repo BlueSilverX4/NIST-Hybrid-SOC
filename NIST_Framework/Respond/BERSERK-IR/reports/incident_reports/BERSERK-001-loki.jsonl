@@ -1,0 +1,7 @@
+{"case_id":"BERSERK-001","event":"detection","threat":"SSH Brute Force","severity":"HIGH","indicator":"185.220.101.5","attempts":4}
+{"case_id":"BERSERK-001","event":"investigation","events":4,"duration_seconds":9.0,"repeated_activity":true}
+{"case_id":"BERSERK-001","event":"indicator","indicator":"185.220.101.5"}
+{"case_id":"BERSERK-001","event":"accounts","accounts":["admin","root"]}
+{"case_id":"BERSERK-001","event":"mitre","technique":"T1110","subtechnique":"T1110.001","name":"Password Guessing"}
+{"case_id":"BERSERK-001","event":"decision","decision":"INVESTIGATE","human_approval_required":true}
+{"case_id":"BERSERK-001","event":"compromise","status":"NO_COMPROMISE_OBSERVED","confirmed":false}

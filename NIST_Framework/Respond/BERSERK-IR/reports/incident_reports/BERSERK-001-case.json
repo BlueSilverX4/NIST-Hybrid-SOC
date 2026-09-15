@@ -1,0 +1,211 @@
+{
+    "case": {
+        "case_id": "BERSERK-001",
+        "title": "The Branded Host",
+        "threat": "SSH Brute Force",
+        "indicator": "185.220.101.5",
+        "attempts": 4,
+        "severity": "HIGH",
+        "confidence": "HIGH",
+        "status": "OPEN",
+        "evidence": [
+            {
+                "timestamp": "Aug  3 08:14:22",
+                "username": "admin",
+                "source_ip": "185.220.101.5",
+                "port": 42110,
+                "event": "Failed SSH Authentication"
+            },
+            {
+                "timestamp": "Aug  3 08:14:25",
+                "username": "admin",
+                "source_ip": "185.220.101.5",
+                "port": 42112,
+                "event": "Failed SSH Authentication"
+            },
+            {
+                "timestamp": "Aug  3 08:14:28",
+                "username": "root",
+                "source_ip": "185.220.101.5",
+                "port": 42115,
+                "event": "Failed SSH Authentication"
+            },
+            {
+                "timestamp": "Aug  3 08:14:31",
+                "username": "root",
+                "source_ip": "185.220.101.5",
+                "port": 42118,
+                "event": "Failed SSH Authentication"
+            }
+        ],
+        "timeline": [
+            {
+                "event_type": "EVIDENCE",
+                "action": "EVIDENCE",
+                "description": "Failed SSH Authentication | source=185.220.101.5 | user=admin | port=42110",
+                "timestamp": "Aug  3 08:14:22"
+            },
+            {
+                "event_type": "EVIDENCE",
+                "action": "EVIDENCE",
+                "description": "Failed SSH Authentication | source=185.220.101.5 | user=admin | port=42112",
+                "timestamp": "Aug  3 08:14:25"
+            },
+            {
+                "event_type": "EVIDENCE",
+                "action": "EVIDENCE",
+                "description": "Failed SSH Authentication | source=185.220.101.5 | user=root | port=42115",
+                "timestamp": "Aug  3 08:14:28"
+            },
+            {
+                "event_type": "EVIDENCE",
+                "action": "EVIDENCE",
+                "description": "Failed SSH Authentication | source=185.220.101.5 | user=root | port=42118",
+                "timestamp": "Aug  3 08:14:31"
+            }
+        ]
+    },
+    "investigation": {
+        "event_count": 4,
+        "first_event": "Aug  3 08:14:22",
+        "last_event": "Aug  3 08:14:31",
+        "duration_seconds": 9.0,
+        "event_types": {
+            "EVIDENCE": 4
+        },
+        "repeated_activity": true,
+        "targeted_users": [
+            "admin",
+            "root"
+        ],
+        "multiple_users_targeted": true,
+        "privileged_account_targeted": true,
+        "dominant_source_ip": "185.220.101.5",
+        "findings": [
+            "Repeated authentication activity was observed.",
+            "Multiple user accounts were targeted.",
+            "The root account was targeted.",
+            "Dominant source IP identified: 185.220.101.5.",
+            "4 investigation events were reconstructed.",
+            "Observed activity occurred within a 9.0-second window."
+        ]
+    },
+    "evidence_enrichment": {
+        "indicator": "185.220.101.5",
+        "indicator_type": "IPv4 Address",
+        "evidence_count": 4,
+        "first_seen": "Aug  3 08:14:22",
+        "last_seen": "Aug  3 08:14:31",
+        "duration_seconds": 9.0,
+        "targeted_accounts": [
+            "admin",
+            "root"
+        ],
+        "observed_ports": [
+            42110,
+            42112,
+            42115,
+            42118
+        ],
+        "observed_events": [
+            "Failed SSH Authentication"
+        ],
+        "attack_context": [
+            "Repeated authentication failures",
+            "Multiple accounts targeted",
+            "Privileged account targeted"
+        ],
+        "confidence": "HIGH",
+        "human_validation_required": true
+    },
+    "mitre": {
+        "technique": "T1110",
+        "subtechnique": "T1110.001",
+        "name": "Password Guessing",
+        "confidence": "HIGH"
+    },
+    "threat_assessment": {
+        "score": 60,
+        "severity": "HIGH",
+        "factors": [
+            "Repeated authentication failures",
+            "Root account targeted",
+            "Admin account targeted"
+        ]
+    },
+    "decision": {
+        "action": "INVESTIGATE",
+        "reason": "High-risk activity requires analyst investigation.",
+        "requires_human_approval": true
+    },
+    "response": {
+        "case_id": "BERSERK-001",
+        "indicator": "185.220.101.5",
+        "action": "INVESTIGATE",
+        "mode": "SIMULATION",
+        "playbook": "Black Swordsman Incident Response Protocol",
+        "protocol_phase": "Phase 4",
+        "protocol_name": "Apostle Hunt",
+        "human_approval_required": true,
+        "steps": [
+            "Review SSH authentication failures",
+            "Review targeted accounts",
+            "Check for successful authentication",
+            "Review related network and web activity",
+            "Determine whether containment is necessary"
+        ]
+    },
+    "recovery": {
+        "case_id": "BERSERK-001",
+        "status": "NO_COMPROMISE_OBSERVED",
+        "compromise_confirmed": false,
+        "containment_required": false,
+        "recovery_required": false,
+        "notes": [
+            "Malicious authentication activity was detected.",
+            "No successful attacker authentication was observed.",
+            "No recovery action is currently required."
+        ]
+    },
+    "closure": {
+        "case_id": "BERSERK-001",
+        "closure_eligible": true,
+        "status": "READY_FOR_CLOSURE",
+        "reason": "No compromise, containment, or recovery activity remains.",
+        "human_approval_required": true
+    },
+    "lessons_learned": {
+        "case_id": "BERSERK-001",
+        "status": "LESSONS_RECORDED",
+        "what_worked": [
+            "SSH brute-force detection identified repeated authentication failures.",
+            "Threat scoring identified the activity as high risk.",
+            "The decision gate prevented automatic containment.",
+            "The response plan was generated in simulation mode.",
+            "Recovery and closure assessments were completed."
+        ],
+        "what_failed": [
+            "No confirmed detection or response failure was identified."
+        ],
+        "detection_source": [
+            "Repeated SSH authentication failures generated the security finding.",
+            "The same source IP targeted both admin and root accounts."
+        ],
+        "early_detection": [
+            "Earlier detection cannot be established from the available evidence."
+        ],
+        "playbook_effectiveness": [
+            "The Black Swordsman Incident Response Protocol provided structured investigation and response guidance.",
+            "The playbook mapped the investigation to Phase 4 \u2014 Apostle Hunt."
+        ],
+        "detection_tuning": [
+            "Review authentication-failure thresholds and detection logic.",
+            "Evaluate whether repeated targeting of privileged accounts should increase detection priority."
+        ],
+        "defensive_improvements": [
+            "Evaluate additional SSH authentication protections.",
+            "Continue monitoring authentication activity targeting privileged accounts.",
+            "Consider stronger controls for repeated authentication failures."
+        ]
+    }
+}

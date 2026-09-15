@@ -1,0 +1,17 @@
+{
+    "case_id": "BERSERK-001",
+    "indicator": "185.220.101.5",
+    "action": "INVESTIGATE",
+    "mode": "SIMULATION",
+    "playbook": "Black Swordsman Incident Response Protocol",
+    "protocol_phase": "Phase 4",
+    "protocol_name": "Apostle Hunt",
+    "human_approval_required": true,
+    "steps": [
+        "Review SSH authentication failures",
+        "Review targeted accounts",
+        "Check for successful authentication",
+        "Review related network and web activity",
+        "Determine whether containment is necessary"
+    ]
+}
