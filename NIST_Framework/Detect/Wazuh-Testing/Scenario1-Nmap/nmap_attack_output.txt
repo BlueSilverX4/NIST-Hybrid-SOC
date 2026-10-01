@@ -1,0 +1,168 @@
+# Nmap 7.99 scan initiated Thu Oct  1 08:59:16 2026 as: /usr/lib/nmap/nmap -sV -sC -A -oN nmap_attack_output.txt 192.168.1.157
+Nmap scan report for kali (192.168.1.157)
+Host is up (0.00025s latency).
+Not shown: 995 filtered tcp ports (no-response)
+PORT     STATE SERVICE   VERSION
+22/tcp   open  ssh       OpenSSH 10.3p1 Debian 4 (protocol 2.0)
+80/tcp   open  http      Apache httpd 2.4.68 ((Debian))
+|_http-title: Apache2 Debian Default Page: It works
+|_http-server-header: Apache/2.4.68 (Debian)
+443/tcp  open  ssl/https
+| tls-alpn: 
+|_  http/1.1
+| ssl-cert: Subject: commonName=dashboard/organizationName=Wazuh/countryName=US
+| Subject Alternative Name: IP Address:127.0.0.1
+| Not valid before: 2026-07-17T10:09:56
+|_Not valid after:  2036-07-14T10:09:56
+|_ssl-date: TLS randomness does not represent time
+| fingerprint-strings: 
+|   FourOhFourRequest: 
+|     HTTP/1.1 401 Unauthorized
+|     osd-name: kali
+|     x-frame-options: sameorigin
+|     content-type: application/json; charset=utf-8
+|     cache-control: private, no-cache, no-store, must-revalidate
+|     set-cookie: security_authentication=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; HttpOnly; Path=/
+|     content-length: 77
+|     Date: Thu, 01 Oct 2026 12:59:44 GMT
+|     Connection: close
+|     {"statusCode":401,"error":"Unauthorized","message":"Authentication required"}
+|   GetRequest: 
+|     HTTP/1.1 302 Found
+|     location: /app/login?
+|     osd-name: kali
+|     x-frame-options: sameorigin
+|     cache-control: private, no-cache, no-store, must-revalidate
+|     set-cookie: security_authentication=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; HttpOnly; Path=/
+|     content-length: 0
+|     Date: Thu, 01 Oct 2026 12:59:44 GMT
+|     Connection: close
+|   HTTPOptions: 
+|     HTTP/1.1 404 Not Found
+|     osd-name: kali
+|     x-frame-options: sameorigin
+|     content-type: application/json; charset=utf-8
+|     cache-control: private, no-cache, no-store, must-revalidate
+|     content-length: 60
+|     Date: Thu, 01 Oct 2026 12:59:44 GMT
+|     Connection: close
+|     {"statusCode":404,"error":"Not Found","message":"Not Found"}
+|   RTSPRequest: 
+|     HTTP/1.1 404 Not Found
+|     osd-name: kali
+|     x-frame-options: sameorigin
+|     content-type: application/json; charset=utf-8
+|     cache-control: private, no-cache, no-store, must-revalidate
+|     content-length: 60
+|     Date: Thu, 01 Oct 2026 12:59:50 GMT
+|     Connection: close
+|_    {"statusCode":404,"error":"Not Found","message":"Not Found"}
+3000/tcp open  http      Golang net/http server
+| fingerprint-strings: 
+|   FourOhFourRequest: 
+|     HTTP/1.0 302 Found
+|     Cache-Control: no-store
+|     Content-Type: text/html; charset=utf-8
+|     Location: /login?redirectTo=%2Fnice%2520ports%252C%2FTri%256Eity.txt%252ebak
+|     X-Content-Type-Options: nosniff
+|     X-Frame-Options: deny
+|     X-Xss-Protection: 1; mode=block
+|     Date: Thu, 01 Oct 2026 13:00:06 GMT
+|     Content-Length: 89
+|     href="/login?redirectTo=%2Fnice%2520ports%252C%2FTri%256Eity.txt%252ebak">Found</a>.
+|   GenericLines, Help, LPDString, RTSPRequest, SIPOptions, SSLSessionReq, Socks5: 
+|     HTTP/1.1 400 Bad Request
+|     Content-Type: text/plain; charset=utf-8
+|     Connection: close
+|     Request
+|   HTTPOptions: 
+|     HTTP/1.0 302 Found
+|     Cache-Control: no-store
+|     Location: /login
+|     X-Content-Type-Options: nosniff
+|     X-Frame-Options: deny
+|     X-Xss-Protection: 1; mode=block
+|     Date: Thu, 01 Oct 2026 12:59:46 GMT
+|     Content-Length: 0
+|   OfficeScan: 
+|     HTTP/1.1 400 Bad Request: missing required Host header
+|     Content-Type: text/plain; charset=utf-8
+|     Connection: close
+|_    Request: missing required Host header
+|_http-trane-info: Problem with XML parsing of /evox/about
+| http-title: Grafana
+|_Requested resource was /login
+9876/tcp open  http      Apache httpd 2.4.68
+|_http-server-header: Apache/2.4.68 (Debian)
+|_http-title: Xplico ..:Users:..
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port443-TCP:V=7.99%T=SSL%I=7%D=10/1%Time=6ABE5940%P=x86_64-pc-linux-gnu
+SF:%r(GetRequest,154,"HTTP/1\.1\x20302\x20Found\r\nlocation:\x20/app/login
+SF:\?\r\nosd-name:\x20kali\r\nx-frame-options:\x20sameorigin\r\ncache-cont
+SF:rol:\x20private,\x20no-cache,\x20no-store,\x20must-revalidate\r\nset-co
+SF:okie:\x20security_authentication=;\x20Max-Age=0;\x20Expires=Thu,\x2001\
+SF:x20Jan\x201970\x2000:00:00\x20GMT;\x20Secure;\x20HttpOnly;\x20Path=/\r\
+SF:ncontent-length:\x200\r\nDate:\x20Thu,\x2001\x20Oct\x202026\x2012:59:44
+SF:\x20GMT\r\nConnection:\x20close\r\n\r\n")%r(HTTPOptions,13B,"HTTP/1\.1\
+SF:x20404\x20Not\x20Found\r\nosd-name:\x20kali\r\nx-frame-options:\x20same
+SF:origin\r\ncontent-type:\x20application/json;\x20charset=utf-8\r\ncache-
+SF:control:\x20private,\x20no-cache,\x20no-store,\x20must-revalidate\r\nco
+SF:ntent-length:\x2060\r\nDate:\x20Thu,\x2001\x20Oct\x202026\x2012:59:44\x
+SF:20GMT\r\nConnection:\x20close\r\n\r\n{\"statusCode\":404,\"error\":\"No
+SF:t\x20Found\",\"message\":\"Not\x20Found\"}")%r(FourOhFourRequest,1C1,"H
+SF:TTP/1\.1\x20401\x20Unauthorized\r\nosd-name:\x20kali\r\nx-frame-options
+SF::\x20sameorigin\r\ncontent-type:\x20application/json;\x20charset=utf-8\
+SF:r\ncache-control:\x20private,\x20no-cache,\x20no-store,\x20must-revalid
+SF:ate\r\nset-cookie:\x20security_authentication=;\x20Max-Age=0;\x20Expire
+SF:s=Thu,\x2001\x20Jan\x201970\x2000:00:00\x20GMT;\x20Secure;\x20HttpOnly;
+SF:\x20Path=/\r\ncontent-length:\x2077\r\nDate:\x20Thu,\x2001\x20Oct\x2020
+SF:26\x2012:59:44\x20GMT\r\nConnection:\x20close\r\n\r\n{\"statusCode\":40
+SF:1,\"error\":\"Unauthorized\",\"message\":\"Authentication\x20required\"
+SF:}")%r(RTSPRequest,13B,"HTTP/1\.1\x20404\x20Not\x20Found\r\nosd-name:\x2
+SF:0kali\r\nx-frame-options:\x20sameorigin\r\ncontent-type:\x20application
+SF:/json;\x20charset=utf-8\r\ncache-control:\x20private,\x20no-cache,\x20n
+SF:o-store,\x20must-revalidate\r\ncontent-length:\x2060\r\nDate:\x20Thu,\x
+SF:2001\x20Oct\x202026\x2012:59:50\x20GMT\r\nConnection:\x20close\r\n\r\n{
+SF:\"statusCode\":404,\"error\":\"Not\x20Found\",\"message\":\"Not\x20Foun
+SF:d\"}");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port3000-TCP:V=7.99%I=7%D=10/1%Time=6ABE5938%P=x86_64-pc-linux-gnu%r(Ge
+SF:nericLines,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20t
+SF:ext/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x
+SF:20Request")%r(Help,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Ty
+SF:pe:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\
+SF:x20Bad\x20Request")%r(HTTPOptions,D2,"HTTP/1\.0\x20302\x20Found\r\nCach
+SF:e-Control:\x20no-store\r\nLocation:\x20/login\r\nX-Content-Type-Options
+SF::\x20nosniff\r\nX-Frame-Options:\x20deny\r\nX-Xss-Protection:\x201;\x20
+SF:mode=block\r\nDate:\x20Thu,\x2001\x20Oct\x202026\x2012:59:46\x20GMT\r\n
+SF:Content-Length:\x200\r\n\r\n")%r(RTSPRequest,67,"HTTP/1\.1\x20400\x20Ba
+SF:d\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnec
+SF:tion:\x20close\r\n\r\n400\x20Bad\x20Request")%r(SSLSessionReq,67,"HTTP/
+SF:1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charse
+SF:t=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request")%r(FourOh
+SF:FourRequest,190,"HTTP/1\.0\x20302\x20Found\r\nCache-Control:\x20no-stor
+SF:e\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nLocation:\x20/logi
+SF:n\?redirectTo=%2Fnice%2520ports%252C%2FTri%256Eity\.txt%252ebak\r\nX-Co
+SF:ntent-Type-Options:\x20nosniff\r\nX-Frame-Options:\x20deny\r\nX-Xss-Pro
+SF:tection:\x201;\x20mode=block\r\nDate:\x20Thu,\x2001\x20Oct\x202026\x201
+SF:3:00:06\x20GMT\r\nContent-Length:\x2089\r\n\r\n<a\x20href=\"/login\?red
+SF:irectTo=%2Fnice%2520ports%252C%2FTri%256Eity\.txt%252ebak\">Found</a>\.
+SF:\n\n")%r(LPDString,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Ty
+SF:pe:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\
+SF:x20Bad\x20Request")%r(SIPOptions,67,"HTTP/1\.1\x20400\x20Bad\x20Request
+SF:\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20clo
+SF:se\r\n\r\n400\x20Bad\x20Request")%r(Socks5,67,"HTTP/1\.1\x20400\x20Bad\
+SF:x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnecti
+SF:on:\x20close\r\n\r\n400\x20Bad\x20Request")%r(OfficeScan,A3,"HTTP/1\.1\
+SF:x20400\x20Bad\x20Request:\x20missing\x20required\x20Host\x20header\r\nC
+SF:ontent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\
+SF:n\r\n400\x20Bad\x20Request:\x20missing\x20required\x20Host\x20header");
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Aggressive OS guesses: Linux 2.6.32 (96%), Linux 5.0 - 6.2 (96%), Linux 5.9 (94%), Linux 6.8 (94%), HP P2000 G3 NAS device (92%), Linux 3.7 - 4.19 (91%), Linux 5.10 - 5.11 (91%), Linux 5.4 - 5.15 (91%), Linux 4.1 (91%), Linux 6.17 (91%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 0 hops
+Service Info: Host: 127.0.1.1; OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Thu Oct  1 09:01:54 2026 -- 1 IP address (1 host up) scanned in 160.39 seconds

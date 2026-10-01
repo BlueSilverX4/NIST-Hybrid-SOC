@@ -1,0 +1,43 @@
+{
+  "predecoder": {
+    "program_name": "sshd-session",
+    "timestamp": "2026-10-01T05:48:33.788517-04:00"
+  },
+  "agent": {
+    "name": "kali",
+    "id": "000"
+  },
+  "manager": {
+    "name": "kali"
+  },
+  "data": {
+    "srcuser": "admin",
+    "srcip": "192.168.1.157",
+    "srcport": "43358"
+  },
+  "rule": {
+    "firedtimes": 79,
+    "mail": false,
+    "level": 8,
+    "description": "Sky Striker SOC: Attempted login using a non-existent user",
+    "groups": [
+      "authentication_failed",
+      "ssh",
+      "bruteforce"
+    ],
+    "id": "5710"
+  },
+  "decoder": {
+    "parent": "sshd",
+    "name": "sshd"
+  },
+  "full_log": "2026-10-01T05:48:33.788517-04:00 kali sshd-session[54778]: Disconnecting invalid user admin 192.168.1.157 port 43358: Too many authentication failures [preauth]",
+  "input": {
+    "type": "log"
+  },
+  "@timestamp": "2026-10-01T09:48:34.311Z",
+  "location": "/var/log/auth.log",
+  "id": "1790848114.16785503",
+  "timestamp": "2026-10-01T05:48:34.311-0400",
+  "_id": "8ADd9qABlq2-7cafrrsH"
+}

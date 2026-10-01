@@ -1,0 +1,63 @@
+
+-----------------
+DIRB v2.22    
+By The Dark Raver
+-----------------
+
+OUTPUT_FILE: dirb_attack_output.txt
+START_TIME: Thu Oct  1 04:21:45 2026
+URL_BASE: http://192.168.1.157/
+WORDLIST_FILES: /usr/share/dirb/wordlists/common.txt
+
+-----------------
+
+GENERATED WORDS: 4612
+
+---- Scanning URL: http://192.168.1.157/ ----
+
+(!) FATAL: Too many errors connecting to host
+    (Possible cause: COULDNT CONNECT)
+
+-----------------
+END_TIME: Thu Oct  1 04:21:50 2026
+DOWNLOADED: 0 - FOUND: 0
+
+-----------------
+DIRB v2.22    
+By The Dark Raver
+-----------------
+
+OUTPUT_FILE: dirb_attack_output.txt
+START_TIME: Thu Oct  1 04:27:10 2026
+URL_BASE: http://192.168.1.157/
+WORDLIST_FILES: /usr/share/dirb/wordlists/common.txt
+
+-----------------
+
+GENERATED WORDS: 4612
+
+---- Scanning URL: http://192.168.1.157/ ----
++ http://192.168.1.157/index.html (CODE:200|SIZE:10703)
+==> DIRECTORY: http://192.168.1.157/javascript/
++ http://192.168.1.157/server-status (CODE:200|SIZE:4343)
+
+---- Entering directory: http://192.168.1.157/javascript/ ----
+==> DIRECTORY: http://192.168.1.157/javascript/events/
+==> DIRECTORY: http://192.168.1.157/javascript/jquery/
+==> DIRECTORY: http://192.168.1.157/javascript/util/
+
+---- Entering directory: http://192.168.1.157/javascript/events/ ----
++ http://192.168.1.157/javascript/events/events (CODE:200|SIZE:14890)
+
+---- Entering directory: http://192.168.1.157/javascript/jquery/ ----
++ http://192.168.1.157/javascript/jquery/jquery (CODE:200|SIZE:285284)
+
+---- Entering directory: http://192.168.1.157/javascript/util/ ----
+==> DIRECTORY: http://192.168.1.157/javascript/util/support/
++ http://192.168.1.157/javascript/util/util (CODE:200|SIZE:19697)
+
+---- Entering directory: http://192.168.1.157/javascript/util/support/ ----
+
+-----------------
+END_TIME: Thu Oct  1 04:29:11 2026
+DOWNLOADED: 27672 - FOUND: 5

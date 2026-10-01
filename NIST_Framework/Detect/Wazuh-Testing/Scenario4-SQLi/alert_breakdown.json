@@ -1,0 +1,59 @@
+{
+  "agent": {
+    "name": "kali",
+    "id": "000"
+  },
+  "manager": {
+    "name": "kali"
+  },
+  "data": {
+    "protocol": "GET",
+    "srcip": "192.168.1.157",
+    "id": "200",
+    "url": "/index.html?id=1%27%29%20AND%209665%3D%28SELECT%209665%20FROM%20PG_SLEEP%285%29%29%20AND%20%28%27QcRs%27%3D%27QcRs"
+  },
+  "rule": {
+    "firedtimes": 21,
+    "mail": false,
+    "level": 6,
+    "pci_dss": [
+      "6.5",
+      "11.4"
+    ],
+    "tsc": [
+      "CC6.6",
+      "CC7.1",
+      "CC8.1",
+      "CC6.1",
+      "CC6.8",
+      "CC7.2",
+      "CC7.3"
+    ],
+    "description": "A web attack returned code 200 (success).",
+    "groups": [
+      "web",
+      "accesslog",
+      "attack"
+    ],
+    "id": "31106",
+    "nist_800_53": [
+      "SA.11",
+      "SI.4"
+    ],
+    "gdpr": [
+      "IV_35.7.d"
+    ]
+  },
+  "decoder": {
+    "name": "web-accesslog"
+  },
+  "full_log": "192.168.1.157 - - [01/Oct/2026:08:14:21 -0400] \"GET /index.html?id=1%27%29%20AND%209665%3D%28SELECT%209665%20FROM%20PG_SLEEP%285%29%29%20AND%20%28%27QcRs%27%3D%27QcRs HTTP/1.1\" 200 3346 \"-\" \"sqlmap/1.10.6#stable (https://sqlmap.org)\"",
+  "input": {
+    "type": "log"
+  },
+  "@timestamp": "2026-10-01T12:14:22.782Z",
+  "location": "/var/log/apache2/access.log",
+  "id": "1790856862.16814095",
+  "timestamp": "2026-10-01T08:14:22.782-0400",
+  "_id": "RABk96ABlq2-7cafErzb"
+}
