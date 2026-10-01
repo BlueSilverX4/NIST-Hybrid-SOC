@@ -1,0 +1,48 @@
+// 1. Discover and tail Zeek JSON log files
+local.file_match "zeek_logs" {
+  path_targets = [
+    {
+      "__path__" = "/home/brandongregg/soc-investigation-workbench/scripts/*.log",
+      "service"  = "zeek",
+    },
+  ]
+}
+
+// 2. Read log entries from matched files
+loki.source.file "zeek_scraper" {
+  targets    = local.file_match.zeek_logs.targets
+  forward_to = [loki.process.zeek_json.receiver]
+}
+
+// 3. Parse JSON log lines and extract dynamic fields
+loki.process "zeek_json" {
+  stage.json {
+    expressions = {
+      timestamp = "ts",
+      src_ip    = "\"id.orig_h\"",
+      dest_ip   = "\"id.resp_h\"",
+      dest_port = "\"id.resp_p\"",
+      proto     = "proto",
+      service   = "service",
+      query     = "query",
+    }
+  }
+
+  // Set static and extracted labels for fast querying in Loki
+  stage.labels {
+    values = {
+      log_type = "zeek",
+      proto    = "",
+      service  = "",
+    }
+  }
+
+  forward_to = [loki.write.local_loki.receiver]
+}
+
+// 4. Ship parsed logs to local Loki instance
+loki.write "local_loki" {
+  endpoint {
+    url = "http://127.0.0.1:3100/loki/api/v1/push"
+  }
+}
