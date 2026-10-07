@@ -1,0 +1,45 @@
+{
+  "agent": {
+    "name": "kali",
+    "id": "000"
+  },
+  "data": {
+    "srcuser": "admin",
+    "srcip": "192.168.1.157",
+    "srcport": "45930"
+  },
+  "rule": {
+    "firedtimes": 13,
+    "mail": true,
+    "level": 12,
+    "description": "GRID ALERT: High-Frequency SSH Brute-Force Attack Detected",
+    "groups": [
+      "authentication_failed",
+      "ssh",
+      "bruteforce"
+    ],
+    "id": "100060",
+    "frequency": 5
+  },
+  "full_log": "2026-10-02T21:32:17.648996-04:00 kali sshd-session[313691]: Disconnecting invalid user admin 192.168.1.157 port 45930: Too many authentication failures [preauth]",
+  "id": "1790991137.184629",
+  "timestamp": "2026-10-02T21:32:17.878-0400",
+  "predecoder": {
+    "program_name": "sshd-session",
+    "timestamp": "2026-10-02T21:32:17.648996-04:00"
+  },
+  "previous_output": "2026-10-02T21:32:16.866474-04:00 kali sshd-session[313693]: Failed password for invalid user admin from 192.168.1.157 port 45942 ssh2\n2026-10-02T21:32:16.534527-04:00 kali sshd-session[313691]: Failed password for invalid user admin from 192.168.1.157 port 45930 ssh2\n2026-10-02T21:32:16.164174-04:00 kali sshd-session[313681]: Disconnecting invalid user admin 192.168.1.157 port 38114: Too many authentication failures [preauth]\n2026-10-02T21:32:15.753452-04:00 kali sshd-session[313681]: Failed password for invalid user admin from 192.168.1.157 port 38114 ssh2",
+  "manager": {
+    "name": "kali"
+  },
+  "decoder": {
+    "parent": "sshd",
+    "name": "sshd"
+  },
+  "input": {
+    "type": "log"
+  },
+  "@timestamp": "2026-10-03T01:32:17.878Z",
+  "location": "/var/log/auth.log",
+  "_id": "iq1q_6ABgItaASB9qqHs"
+}
