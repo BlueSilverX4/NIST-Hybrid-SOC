@@ -1,0 +1,13 @@
+{
+  "element": "Wood",
+  "domain": "Identity & Directory Services (AD / LDAP)",
+  "timestamp": "2026-10-03T22:34:26.070504",
+  "target_domain": "corp.local",
+  "identity_telemetry": {
+    "event_type": "KERBEROS_TGT_REQUEST",
+    "user_principal": "audit_account",
+    "domain": "corp.local",
+    "risk_score": "LOW"
+  },
+  "status": "COMPLETED"
+}

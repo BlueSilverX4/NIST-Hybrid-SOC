@@ -1,0 +1,39 @@
+{
+  "element": "Aqua",
+  "domain": "Web Application & API Security",
+  "timestamp": "2026-10-03T21:29:14.311521",
+  "target": "http://127.0.0.1:8000",
+  "summary": {
+    "total_alerts": 2,
+    "high_risk_alerts": 1
+  },
+  "raw_findings": [
+    {
+      "sourceid": "1",
+      "other": "",
+      "method": "GET",
+      "evidence": "X-Frame-Options header not set",
+      "pluginId": "10020",
+      "cweid": "1021",
+      "confidence": "Medium",
+      "risk": "Medium",
+      "description": "Anti-MIME-Sniffing header missing",
+      "alert": "Absence of Anti-MIME-Sniffing Header",
+      "param": "x-content-type-options"
+    },
+    {
+      "sourceid": "1",
+      "other": "",
+      "method": "POST",
+      "evidence": "SELECT * FROM users WHERE id =",
+      "pluginId": "40018",
+      "cweid": "89",
+      "confidence": "High",
+      "risk": "High",
+      "description": "SQL Injection detected in login parameter",
+      "alert": "SQL Injection",
+      "param": "username"
+    }
+  ],
+  "status": "COMPLETED"
+}

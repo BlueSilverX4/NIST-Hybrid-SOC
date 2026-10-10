@@ -1,0 +1,14 @@
+{
+  "playbook": "CustomStyle_YARA_Engine",
+  "timestamp": "2026-10-03T23:48:48.566801",
+  "rule_name": "EvilPayload_Check",
+  "rule_path": "playbooks/custom_style/generated_rule.yar",
+  "detection_results": {
+    "status": "SKIPPED",
+    "matches": [
+      "CustomStyle_Mock_Rule /tmp/sample.bin"
+    ],
+    "returncode": 0
+  },
+  "status": "COMPLETED"
+}

@@ -1,0 +1,30 @@
+{
+  "playbook": "TeamStyle_Pivot_Tracker",
+  "domain": "Multi-Node Incident Correlation & Lateral Movement",
+  "timestamp": "2026-10-04T01:17:57.832922",
+  "topology": {
+    "patient_zero": "10.0.0.15",
+    "total_compromised_nodes": 3,
+    "node_list": [
+      "10.0.0.22",
+      "10.0.0.15",
+      "10.0.0.45"
+    ],
+    "pivot_chain_length": 2,
+    "hop_sequence": [
+      {
+        "source": "10.0.0.15",
+        "destination": "10.0.0.22",
+        "protocol": "SSH",
+        "timestamp": "2026-10-04T01:17:57.831989"
+      },
+      {
+        "source": "10.0.0.22",
+        "destination": "10.0.0.45",
+        "protocol": "SMB",
+        "timestamp": "2026-10-04T01:17:57.832577"
+      }
+    ]
+  },
+  "status": "COMPLETED"
+}

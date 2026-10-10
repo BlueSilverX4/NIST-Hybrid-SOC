@@ -1,0 +1,12 @@
+{
+  "element": "Elec",
+  "domain": "Network Fabric & Packet Inspection",
+  "timestamp": "2026-10-03T22:10:05.373642",
+  "capture_source": "Interface: lo",
+  "traffic_summary": {
+    "status": "SUCCESS",
+    "protocol_hierarchy_raw": "===================================================================\nProtocol Hierarchy Statistics\nFilter: \n\nframe                                    frames:103 bytes:11409\n  eth                                    frames:103 bytes:11409\n    ip                                   frames:103 bytes:11409\n      tcp                                frames:103 bytes:11409\n        data                             frames:45 bytes:4271\n        tls                              frames:4 bytes:3574\n===================================================================",
+    "endpoints_raw": "================================================================================\nIPv4 Conversations\nFilter:<No Filter>\n                                               |       <-      | |       ->      | |     Total     |    Relative    |   Duration   |\n                                               | Frames  Bytes | | Frames  Bytes | | Frames  Bytes |      Start     |              |\n127.0.0.1            <-> 127.0.0.1                  0 0 bytes       100 11 kB         100 11 kB         0.000000000         5.0000\n================================================================================"
+  },
+  "status": "COMPLETED"
+}

@@ -1,0 +1,13 @@
+{
+  "playbook": "ShieldStyle_Active_Hardening",
+  "timestamp": "2026-10-03T23:32:21.880792",
+  "mitigated_target": "10.0.0.50",
+  "actions_taken": {
+    "iptables": {
+      "status": "SKIPPED",
+      "stdout": "Dry-run mode active.",
+      "returncode": 0
+    }
+  },
+  "status": "COMPLETED"
+}

@@ -1,0 +1,349 @@
+#!/usr/bin/env python3
+"""
+HubStyle Core Orchestrator
+Framework: Style_Change_Framework
+Description: Ingests alert telemetry, evaluates parameters, and automatically dispatches
+             and executes specialized Style Playbooks and Element Modifiers based on 
+             severity, event type, and targeted asset domains.
+"""
+
+import argparse
+import json
+import logging
+import os
+import subprocess
+import sys
+from datetime import datetime
+
+# Configure Structured Logging
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] [HubStyle Core] %(message)s",
+    handlers=[logging.StreamHandler(sys.stdout)]
+)
+
+# Resolve Base Directory Path
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+def parse_telemetry(file_path: str) -> dict:
+    """
+    Ingests and validates telemetry JSON events.
+    """
+    logging.info(f"Ingesting telemetry event file: {file_path}")
+    try:
+        with open(file_path, "r") as f:
+            data = json.load(f)
+            return data
+    except Exception as e:
+        logging.error(f"Failed to ingest telemetry file: {e}")
+        return {}
+
+
+def execute_subprocess_module(script_path: str, args_list: list, dry_run: bool = False):
+    """
+    Safely executes playbook or element scripts via list-vector subprocess invocations.
+    """
+    if not os.path.exists(script_path):
+        logging.error(f"Target script binary not found at path: {script_path}")
+        return
+
+    cmd = [sys.executable, script_path] + args_list
+    if dry_run:
+        cmd.append("--dry-run")
+
+    printable_cmd = " ".join(cmd)
+    logging.info(f"--> Invoking Subprocess Module: {printable_cmd}")
+
+    try:
+        result = subprocess.run(
+            cmd,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            timeout=600
+        )
+        if result.returncode == 0:
+            logging.info("--> [MODULE EXECUTION COMPLETED SUCCESSFULLY]")
+            if result.stdout:
+                for line in result.stdout.splitlines():
+                    print(f"    [Module Output] {line}")
+        else:
+            logging.error(f"--> [MODULE EXECUTION FAILED] Code {result.returncode}")
+            if result.stderr:
+                for line in result.stderr.splitlines():
+                    print(f"    [Module Error] {line}")
+
+    except Exception as e:
+        logging.error(f"Error executing module process: {e}")
+
+
+def dispatch_style(event: dict, dry_run: bool = False):
+    """
+    Evaluates incident parameters and routes to corresponding Style Change playbook
+    or Element forensic modifier.
+    """
+    severity = event.get("severity", "LOW").upper()
+    event_type = event.get("type", "UNKNOWN").upper()
+    target_ip = event.get("target", "127.0.0.1")
+    target_url = event.get("target_url", "http://127.0.0.1:8000")
+    service = event.get("service", "ssh")
+    memory_file = event.get("memory_file", "sample_memory.raw")
+    pcap_file = event.get("pcap_file", None)
+    network_interface = event.get("interface", "lo")
+    target_domain = event.get("domain", "corp.local")
+    user_principal = event.get("user", "audit_account")
+    target_os = event.get("os", "linux")
+    suspect_file = event.get("target_file", "/tmp/sample.bin")
+    ioc_strings = event.get("ioc_strings", ["cmd.exe", "powershell -enc"])
+    patient_zero = event.get("patient_zero", "10.0.0.15")
+    pivot_hops = event.get("pivot_hops", ["10.0.0.15->10.0.0.22:SSH", "10.0.0.22->10.0.0.45:SMB"])
+
+    logging.info(
+        f"ALERT INGESTED | Severity: {severity} | Type: {event_type} | Target: {target_ip}"
+    )
+
+    # 1. Routing for Multi-Node Pivot Tracking & Lateral Movement (TeamStyle)
+    if event_type in ["LATERAL_MOVEMENT", "AD_EXPLOIT", "PIVOT_DETECTED", "MULTI_NODE_INCIDENT"]:
+        logging.info("└─► [STYLE CHANGE TRIGGERED] -> Engaging [TeamStyle] Multi-Node Pivot Tracker")
+        
+        team_script = os.path.join(BASE_DIR, "playbooks", "team_style", "team_pivot_tracker.py")
+        output_artifact = os.path.join(BASE_DIR, "playbooks", "team_style", "team_auto_run.json")
+        
+        team_args = [
+            "-z", patient_zero,
+            "-p"
+        ] + pivot_hops + [
+            "-o", output_artifact
+        ]
+        
+        execute_subprocess_module(team_script, team_args, dry_run=dry_run)
+
+    # 2. Routing for Threat Emulation & YARA Rule Generation (CustomStyle)
+    elif event_type in ["MALWARE_DETECTED", "UNKNOWN_PAYLOAD", "YARA_ALERT", "SUSPICIOUS_FILE"]:
+        logging.info("└─► [STYLE CHANGE TRIGGERED] -> Engaging [CustomStyle] YARA Engine Playbook")
+        
+        custom_script = os.path.join(BASE_DIR, "playbooks", "custom_style", "custom_yara_engine.py")
+        output_artifact = os.path.join(BASE_DIR, "playbooks", "custom_style", "custom_auto_run.json")
+        rule_output = os.path.join(BASE_DIR, "playbooks", "custom_style", "auto_generated.yar")
+        
+        custom_args = [
+            "-n", "AutoGenerated_Threat_Rule",
+            "-s"
+        ] + ioc_strings + [
+            "-t", suspect_file,
+            "-r", rule_output,
+            "-o", output_artifact
+        ]
+        
+        execute_subprocess_module(custom_script, custom_args, dry_run=dry_run)
+
+    # 3. Routing for Active Hardening & Defense (ShieldStyle)
+    elif event_type in ["VULN_EXPOSED", "WEAK_CONFIG", "UNPATCHED_SERVICE", "EXPOSED_PORT"]:
+        logging.info("└─► [STYLE CHANGE TRIGGERED] -> Engaging [ShieldStyle] Active Hardening Playbook")
+        
+        shield_script = os.path.join(BASE_DIR, "playbooks", "shield_style", "shield_hardening.py")
+        output_artifact = os.path.join(BASE_DIR, "playbooks", "shield_style", "shield_auto_run.json")
+        
+        shield_args = [
+            "-b", target_ip,
+            "--engine", "iptables",
+            "-o", output_artifact
+        ]
+        
+        execute_subprocess_module(shield_script, shield_args, dry_run=dry_run)
+
+    # 4. Routing for Rapid Containment (GutsStyle)
+    elif severity in ["HIGH", "CRITICAL"] and event_type in ["BRUTE_FORCE", "ACTIVE_INTRUSION"]:
+        logging.info("└─► [STYLE CHANGE TRIGGERED] -> Engaging [GutsStyle] Rapid Containment Playbook")
+        
+        guts_script = os.path.join(BASE_DIR, "playbooks", "guts_style", "guts_containment.py")
+        output_artifact = os.path.join(BASE_DIR, "playbooks", "guts_style", "guts_auto_run.json")
+        
+        playbook_args = [
+            "-t", target_ip,
+            "-s", service,
+            "--fast",
+            "-o", output_artifact
+        ]
+        
+        execute_subprocess_module(guts_script, playbook_args, dry_run=dry_run)
+
+    # 5. Routing for Identity & Directory Events (Wood Element Modifier)
+    elif event_type in ["KERBEROS_TGT_REQUEST", "LDAP_QUERY", "IDENTITY_ANOMALY", "AD_AUTH_EVENT"]:
+        logging.info("└─► [ELEMENT MODIFIER ACTIVATED: WOOD] -> Executing Identity Telemetry Module")
+        
+        wood_script = os.path.join(BASE_DIR, "elements", "wood", "wood_identity.py")
+        output_artifact = os.path.join(BASE_DIR, "elements", "wood", "wood_auto_telemetry.json")
+        
+        wood_args = [
+            "-d", target_domain,
+            "-u", user_principal,
+            "--simulate",
+            "-o", output_artifact
+        ]
+        
+        execute_subprocess_module(wood_script, wood_args, dry_run=dry_run)
+
+    # 6. Routing for Network Fabric & Packet Inspection (Elec Element Modifier)
+    elif event_type in ["PACKET_CAPTURE", "TRAFFIC_SPIKE", "PCAP_ANALYSIS", "NETWORK_ANOMALY"]:
+        logging.info("└─► [ELEMENT MODIFIER ACTIVATED: ELEC] -> Executing Packet Inspection Module")
+        
+        elec_script = os.path.join(BASE_DIR, "elements", "elec", "elec_tshark.py")
+        output_artifact = os.path.join(BASE_DIR, "elements", "elec", "elec_auto_telemetry.json")
+        
+        elec_args = []
+        if pcap_file:
+            elec_args.extend(["-r", pcap_file])
+        else:
+            elec_args.extend(["-i", network_interface, "-d", "5"])
+            
+        elec_args.extend(["-o", output_artifact])
+        
+        execute_subprocess_module(elec_script, elec_args, dry_run=dry_run)
+
+    # 7. Routing for Web Application & API Events (Aqua Element Modifier)
+    elif event_type in ["WEB_APP_SCAN", "HTTP_ALERT", "SQLI_ATTEMPT"]:
+        logging.info("└─► [ELEMENT MODIFIER ACTIVATED: AQUA] -> Executing Web Security Telemetry Module")
+        
+        aqua_script = os.path.join(BASE_DIR, "elements", "aqua", "aqua_telemetry.py")
+        output_artifact = os.path.join(BASE_DIR, "elements", "aqua", "aqua_auto_telemetry.json")
+        
+        aqua_args = [
+            "-t", target_url,
+            "--simulate",
+            "-o", output_artifact
+        ]
+        
+        execute_subprocess_module(aqua_script, aqua_args, dry_run=dry_run)
+
+    # 8. Routing for Host OS / Memory Forensic Events (Heat Element Modifier)
+    elif event_type in ["MEMORY_DUMP", "HOST_FORENSICS", "VOLATILITY_TRIAGE"]:
+        logging.info("└─► [ELEMENT MODIFIER ACTIVATED: HEAT] -> Executing Volatility 3 Host Forensics Module")
+        
+        heat_script = os.path.join(BASE_DIR, "elements", "heat", "heat_volatility.py")
+        output_artifact = os.path.join(BASE_DIR, "elements", "heat", "heat_auto_telemetry.json")
+        
+        heat_args = [
+            "-f", memory_file,
+            "--os", target_os,
+            "-o", output_artifact
+        ]
+        
+        execute_subprocess_module(heat_script, heat_args, dry_run=dry_run)
+
+    else:
+        logging.info("└─► [HubStyle Core Baseline] Low risk threshold. Maintaining continuous telemetry monitoring.")
+
+
+def main():
+    parser = argparse.ArgumentParser(description="HubStyle SOAR Core Orchestrator")
+    parser.add_argument("--simulate-guts", action="store_true", help="Simulate a High-Severity Brute Force event")
+    parser.add_argument("--simulate-shield", action="store_true", help="Simulate a Vulnerability / Weak Config event")
+    parser.add_argument("--simulate-custom", action="store_true", help="Simulate a Malware / Unknown Payload event")
+    parser.add_argument("--simulate-team", action="store_true", help="Simulate a Lateral Movement / Pivot event")
+    parser.add_argument("--simulate-heat", action="store_true", help="Simulate a Memory Forensics / Heat Element event")
+    parser.add_argument("--simulate-aqua", action="store_true", help="Simulate a Web Security / Aqua Element event")
+    parser.add_argument("--simulate-elec", action="store_true", help="Simulate a Packet Inspection / Elec Element event")
+    parser.add_argument("--simulate-wood", action="store_true", help="Simulate an Identity / Wood Element event")
+    parser.add_argument("-f", "--file", help="Path to telemetry JSON file to ingest")
+    parser.add_argument("--dry-run", action="store_true", help="Pass dry-run mode to dispatched playbooks and modules")
+
+    args = parser.parse_args()
+
+    if args.simulate_team:
+        simulated_event = {
+            "timestamp": datetime.now().isoformat(),
+            "type": "LATERAL_MOVEMENT",
+            "severity": "HIGH",
+            "patient_zero": "10.0.0.15",
+            "pivot_hops": ["10.0.0.15->10.0.0.22:SSH", "10.0.0.22->10.0.0.45:SMB"]
+        }
+        logging.info("Running simulated TeamStyle lateral movement telemetry ingestion...")
+        dispatch_style(simulated_event, dry_run=args.dry_run)
+
+    elif args.simulate_custom:
+        simulated_event = {
+            "timestamp": datetime.now().isoformat(),
+            "type": "MALWARE_DETECTED",
+            "severity": "HIGH",
+            "target_file": "/tmp/sample.bin",
+            "ioc_strings": ["cmd.exe /c", "eval(base64_decode"]
+        }
+        logging.info("Running simulated CustomStyle malware telemetry ingestion...")
+        dispatch_style(simulated_event, dry_run=args.dry_run)
+
+    elif args.simulate_shield:
+        simulated_event = {
+            "timestamp": datetime.now().isoformat(),
+            "type": "VULN_EXPOSED",
+            "severity": "MEDIUM",
+            "target": "10.0.0.50"
+        }
+        logging.info("Running simulated ShieldStyle vulnerability telemetry ingestion...")
+        dispatch_style(simulated_event, dry_run=args.dry_run)
+
+    elif args.simulate_guts:
+        simulated_event = {
+            "timestamp": datetime.now().isoformat(),
+            "type": "BRUTE_FORCE",
+            "severity": "HIGH",
+            "target": "192.168.1.105",
+            "service": "ssh"
+        }
+        logging.info("Running simulated Brute Force telemetry ingestion...")
+        dispatch_style(simulated_event, dry_run=args.dry_run)
+
+    elif args.simulate_heat:
+        simulated_event = {
+            "timestamp": datetime.now().isoformat(),
+            "type": "MEMORY_DUMP",
+            "severity": "HIGH",
+            "memory_file": "elements/heat/live_memory.raw",
+            "os": "linux"
+        }
+        logging.info("Running simulated Memory Forensics (Heat Element) telemetry ingestion...")
+        dispatch_style(simulated_event, dry_run=args.dry_run)
+
+    elif args.simulate_aqua:
+        simulated_event = {
+            "timestamp": datetime.now().isoformat(),
+            "type": "WEB_APP_SCAN",
+            "severity": "HIGH",
+            "target_url": "http://127.0.0.1:8000"
+        }
+        logging.info("Running simulated Web Application (Aqua Element) telemetry ingestion...")
+        dispatch_style(simulated_event, dry_run=args.dry_run)
+
+    elif args.simulate_elec:
+        simulated_event = {
+            "timestamp": datetime.now().isoformat(),
+            "type": "PACKET_CAPTURE",
+            "severity": "MEDIUM",
+            "interface": "lo"
+        }
+        logging.info("Running simulated Packet Inspection (Elec Element) telemetry ingestion...")
+        dispatch_style(simulated_event, dry_run=args.dry_run)
+
+    elif args.simulate_wood:
+        simulated_event = {
+            "timestamp": datetime.now().isoformat(),
+            "type": "KERBEROS_TGT_REQUEST",
+            "severity": "LOW",
+            "domain": "corp.local",
+            "user": "sec_analyst"
+        }
+        logging.info("Running simulated Identity (Wood Element) telemetry ingestion...")
+        dispatch_style(simulated_event, dry_run=args.dry_run)
+
+    elif args.file:
+        event_data = parse_telemetry(args.file)
+        if event_data:
+            dispatch_style(event_data, dry_run=args.dry_run)
+
+    else:
+        logging.warning("No input mode specified. Use --simulate-team, --simulate-custom, --simulate-shield, --simulate-guts, --simulate-heat, --simulate-aqua, --simulate-elec, --simulate-wood, or pass -f.")
+
+
+if __name__ == "__main__":
+    main()

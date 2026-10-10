@@ -1,0 +1,24 @@
+{
+  "element": "Heat",
+  "domain": "Host OS & Memory Forensics",
+  "timestamp": "2026-10-03T03:58:28.221686",
+  "memory_file": "sample_memory.raw",
+  "plugin_results": {
+    "pslist.PsList": {
+      "plugin": "linux.pslist.PsList",
+      "status": "SKIPPED",
+      "output": "Dry-run mode active. No memory analysis performed."
+    },
+    "netstat.NetStat": {
+      "plugin": "linux.netstat.NetStat",
+      "status": "SKIPPED",
+      "output": "Dry-run mode active. No memory analysis performed."
+    },
+    "lsmod.Lsmod": {
+      "plugin": "linux.lsmod.Lsmod",
+      "status": "SKIPPED",
+      "output": "Dry-run mode active. No memory analysis performed."
+    }
+  },
+  "status": "COMPLETED"
+}
