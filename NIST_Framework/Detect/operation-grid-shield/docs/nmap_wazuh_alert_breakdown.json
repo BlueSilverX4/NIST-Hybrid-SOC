@@ -1,0 +1,42 @@
+{
+  "agent": {
+    "name": "kali",
+    "id": "000"
+  },
+  "manager": {
+    "name": "kali"
+  },
+  "data": {
+    "file": "/var/lib/docker/overlay2/d679833d9e715e3cab6c9b6576b2a34c14c20d3e64aefe15069a971630e93690/diff/app/external/phpids/0.6/lib/IDS/tmp/phpids_log.txt",
+    "title": "File is owned by root and has written permissions to anyone."
+  },
+  "rule": {
+    "firedtimes": 1,
+    "mail": false,
+    "level": 7,
+    "pci_dss": [
+      "10.6.1"
+    ],
+    "description": "Host-based anomaly detection event (rootcheck).",
+    "groups": [
+      "ossec",
+      "rootcheck"
+    ],
+    "id": "510",
+    "gdpr": [
+      "IV_35.7.d"
+    ]
+  },
+  "decoder": {
+    "name": "rootcheck"
+  },
+  "full_log": "File '/var/lib/docker/overlay2/d679833d9e715e3cab6c9b6576b2a34c14c20d3e64aefe15069a971630e93690/diff/app/external/phpids/0.6/lib/IDS/tmp/phpids_log.txt' is owned by root and has written permissions to anyone.",
+  "input": {
+    "type": "log"
+  },
+  "@timestamp": "2026-10-02T14:02:15.693Z",
+  "location": "rootcheck",
+  "id": "1790949735.48232",
+  "timestamp": "2026-10-02T10:02:15.693-0400",
+  "_id": "nADs_KABlq2-7cafXL4p"
+}

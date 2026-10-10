@@ -1,0 +1,20 @@
+---
+- name: Automate Attacker Isolation & Process Remediation
+  hosts: monitored_agents
+  become: yes
+  vars:
+    attacker_ip: "{{ ansible_eden_srcip | default('192.168.1.100') }}"
+
+  tasks:
+    - name: Block Attacker IP in iptables Firewall
+      ansible.builtin.iptables:
+        chain: INPUT
+        source: "{{ attacker_ip }}"
+        jump: DROP
+        comment: "Automated Ansible Block triggered by Wazuh AR"
+
+    - name: Log Security Remediation Event
+      ansible.builtin.lineinfile:
+        path: /var/log/grid_response.log
+        line: "{{ ansible_date_time.iso8601 }} - Attacker IP {{ attacker_ip }} has been isolated."
+        create: yes
